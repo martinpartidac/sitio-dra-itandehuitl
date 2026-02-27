@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Guía completa: picadura de alacrán | Basada en Redtox</title>
+  <meta name="description" content="Guía completa sobre qué hacer ante una picadura de alacrán, basada en las recomendaciones de Redtox. Pasos inmediatos, qué información llevar y qué evitar." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      /* Reutiliza la misma guía de diseño de la landing */
+      --navy: #0f172a;
+      --navy-mid: #1e293b;
+      --navy-light: #334155;
+      --blue: #2563eb;
+      --blue-light: #3b82f6;
+      --blue-bright: #60a5fa;
+      --blue-soft: rgba(37, 99, 235, 0.08);
+      --blue-dark: #1e40af;
+      --wine: #7b2945;
+      --wine-soft: rgba(123, 41, 69, 0.18);
+      --white: #ffffff;
+      --off-white: #f8fafc;
+      --muted: #475569;
+      --muted-dark: #64748b;
+      --border-light: #e2e8f0;
+      --bg-page: #faf9f8;
+      --accent-success: #059669;
+      --accent-success-soft: rgba(5, 150, 105, 0.1);
+      --shadow-rest: 0 1px 3px rgba(0, 0, 0, 0.04);
+      --shadow-raised: 0 4px 12px rgba(0, 0, 0, 0.06);
+      --radius-sm: 8px;
+      --radius-md: 16px;
+      --radius-lg: 24px;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(37, 99, 235, 0.05), transparent 55%),
+        var(--bg-page);
+      color: var(--navy);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .page {
+      min-height: 100vh;
+      padding: 1.5rem clamp(1.5rem, 4vw, 3rem) 3rem;
+      max-width: 1080px;
+      margin: 0 auto;
+    }
+
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      font-size: 0.9rem;
+      color: var(--muted);
+      text-decoration: none;
+      margin-bottom: 1.5rem;
+    }
+
+    .back-link:hover {
+      color: var(--blue);
+      text-decoration: underline;
+    }
+
+    .back-link svg {
+      width: 16px;
+      height: 16px;
+    }
+
+    h1 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(2rem, 3vw, 2.6rem);
+      line-height: 1.2;
+      letter-spacing: -0.03em;
+      margin-bottom: 0.5rem;
+    }
+
+    .subtitle {
+      font-size: 0.95rem;
+      color: var(--muted);
+      margin-bottom: 2rem;
+    }
+
+    .highlight {
+      font-weight: 700;
+      color: var(--accent-success);
+    }
+
+    .card {
+      background: var(--white);
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border-light);
+      box-shadow: var(--shadow-raised);
+      padding: 1.75rem 1.75rem 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .card h2 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 1.4rem;
+      margin-bottom: 0.75rem;
+      letter-spacing: -0.02em;
+    }
+
+    .card p {
+      font-size: 0.95rem;
+      color: var(--muted);
+      margin-bottom: 0.75rem;
+    }
+
+    .card ul {
+      margin-left: 1.1rem;
+      margin-top: 0.25rem;
+      margin-bottom: 0.75rem;
+      font-size: 0.95rem;
+      color: var(--muted);
+    }
+
+    .card ul li + li {
+      margin-top: 0.2rem;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.3rem 0.8rem;
+      border-radius: 999px;
+      background: var(--blue-soft);
+      color: var(--muted-dark);
+      font-size: 0.8rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 0.9rem;
+    }
+
+    .infografia {
+      margin-top: 2rem;
+      text-align: center;
+    }
+
+    .infografia img {
+      max-width: 100%;
+      height: auto;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border-light);
+      box-shadow: 0 10px 30px rgba(15, 23, 42, 0.12);
+    }
+
+    .note {
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-top: 0.75rem;
+    }
+
+    @media (max-width: 600px) {
+      .page {
+        padding-bottom: 2.25rem;
+      }
+
+      h1 {
+        font-size: 1.9rem;
+      }
+
+      .card {
+        padding: 1.5rem 1.25rem 1.75rem;
+      }
+
+      .card h2 {
+        font-size: 1.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <a href="landing-dra-itandehuitl.html#guia" class="back-link">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="15 18 9 12 15 6"></polyline>
+      </svg>
+      Volver a la guía de emergencia
+    </a>
+
+    <h1>Guía completa: picadura de alacrán</h1>
+    <p class="subtitle">
+      Basada en las recomendaciones de <span class="highlight">Redtox</span>. Esta información no sustituye una valoración médica presencial: ante una picadura de alacrán, la prioridad siempre es acudir a un servicio de urgencias.
+    </p>
+
+    <section class="card">
+      <span class="badge">1. Regla de oro</span>
+      <h2>No pierdas tiempo</h2>
+      <p>La atención oportuna puede evitar complicaciones graves. No esperes a que los síntomas empeoren para buscar ayuda.</p>
+    </section>
+
+    <section class="card">
+      <span class="badge">2. Acción inmediata</span>
+      <h2>Acude lo antes posible a una unidad médica</h2>
+      <p>Si hay síntomas además del dolor local (por ejemplo, vómito, dificultad para respirar, letargo, irritabilidad en niñas y niños), acude cuanto antes a un hospital o centro de salud con manejo de urgencias.</p>
+    </section>
+
+    <section class="card">
+      <span class="badge">3. Lleva esta información (ayuda a decidir)</span>
+      <h2>Datos clave para el personal de salud</h2>
+      <p>Si puedes, lleva apuntados estos datos. Ayudan al equipo médico a valorar la gravedad y decidir la dosis de antídoto:</p>
+      <ul>
+        <li>Hora aproximada de la picadura.</li>
+        <li>Zona del cuerpo donde ocurrió.</li>
+        <li>Síntomas: cuáles presentas y desde cuándo.</li>
+        <li>Edad y peso aproximado, especialmente en niñas y niños.</li>
+        <li>Antecedentes importantes (alergias, enfermedades, medicamentos que tomas).</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <span class="badge">4. Foto solo si es seguro</span>
+      <h2>No arriesgues tu seguridad</h2>
+      <p>Si es seguro hacerlo y sin acercarte demasiado, puedes tomar una foto del alacrán desde cierta distancia.</p>
+      <p><strong>No lo manipules ni intentes capturarlo.</strong> La clínica (los síntomas y la exploración física) es lo que guía el manejo; la foto solo orienta, no es indispensable.</p>
+    </section>
+
+    <section class="card">
+      <span class="badge">5. Por qué es fundamental la atención médica</span>
+      <h2>Qué se decide en la unidad médica</h2>
+      <p>En el servicio de urgencias se valora:</p>
+      <ul>
+        <li>El <strong>grado de intoxicación</strong> por la picadura.</li>
+        <li>Si está indicado aplicar antídoto y en qué dosis.</li>
+        <li>La necesidad de observación en área de urgencias u hospitalización.</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <span class="badge">6. Evita lo que retrasa</span>
+      <h2>No te automediques ni uses remedios caseros</h2>
+      <p>Aplicar pomadas, remedios caseros o automedicarte puede retrasar la atención adecuada y enmascarar síntomas importantes.</p>
+      <p><strong>No realices cortes, no chupes la zona ni intentes extraer "veneno".</strong></p>
+    </section>
+
+    <section class="card">
+      <span class="badge">7. Ruta de atención</span>
+      <h2>Orientación y unidades con experiencia</h2>
+      <p>En México, Redtox ofrece orientación para personal de salud y canalización a unidades con experiencia en manejo de animales de ponzoña y antídotos.</p>
+      <p>Puedes consultar más información y rutas de atención en el sitio oficial de Redtox.</p>
+    </section>
+
+    <section class="infografia">
+      <!-- Ajusta la ruta de la imagen según donde la guardes en tu proyecto -->
+      <img src="picadura-alacran-redtox.png" alt="Infografía oficial de Redtox: qué hacer ante una picadura de alacrán" />
+      <p class="note">Infografía basada en el material educativo de Redtox. Esta guía tiene fines informativos y no sustituye una valoración médica.</p>
+    </section>
+  </main>
+</body>
+</html>
+
