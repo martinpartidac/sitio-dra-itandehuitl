@@ -334,6 +334,31 @@
         background: var(--emergency) !important;
         color: white !important;
       }
+
+      .nav-close-item {
+        display: flex;
+        justify-content: flex-end;
+        border-bottom: none !important;
+        margin-bottom: 1rem;
+      }
+
+      .nav-close {
+        background: rgba(255,255,255,0.1);
+        border: 1px solid rgba(255,255,255,0.15);
+        border-radius: 50%;
+        width: 44px;
+        height: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        color: white;
+        transition: background 0.2s ease;
+      }
+
+      .nav-close:hover {
+        background: rgba(255,255,255,0.2);
+      }
     }
 
     /* ----- Hero ----- */
@@ -2066,6 +2091,13 @@
         <span></span>
       </button>
       <ul class="nav-links">
+        <li class="nav-close-item">
+          <button class="nav-close" aria-label="Cerrar menú">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M18 6 6 18M6 6l12 12"/>
+            </svg>
+          </button>
+        </li>
         <li><a href="#por-que">Por qué elegirme</a></li>
         <li><a href="#servicios">Servicios</a></li>
         <li><a href="#ubicacion">Dónde atiendo</a></li>
@@ -2647,6 +2679,16 @@
         document.body.style.overflow = '';
       });
     });
+
+    // Botón cerrar dentro del menú móvil
+    const navCloseBtn = document.querySelector('.nav-close');
+    if (navCloseBtn) {
+      navCloseBtn.addEventListener('click', () => {
+        navLinksMenu.classList.remove('active');
+        navToggle.classList.remove('active');
+        document.body.style.overflow = '';
+      });
+    }
 
     // Cerrar menú móvil al hacer clic fuera
     document.addEventListener('click', (e) => {
