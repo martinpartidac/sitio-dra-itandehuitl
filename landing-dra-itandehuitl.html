@@ -10,6 +10,36 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
+  <!-- Open Graph / Compartir en redes -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Dra. Itandehuitl Arango Castillo | Toxicología Clínica en México" />
+  <meta property="og:description" content="Atención especializada en intoxicaciones, mordeduras de serpiente, araña y picadura de alacrán. Experta en toxicología marina y clínica. Miembro Redtox." />
+  <meta property="og:image" content="foto-dra-itandehuitl.jpg" />
+  <meta property="og:locale" content="es_MX" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Dra. Itandehuitl Arango Castillo | Toxicología Clínica" />
+  <meta name="twitter:description" content="Urgencias toxicológicas 24/7. Fauna de ponzoña, toxicología marina y manejo de antídotos. Miembro Redtox." />
+
+  <!-- Schema.org: Physician -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Physician",
+    "name": "Dra. Itandehuitl Arango Castillo",
+    "description": "Especialista en Toxicología Clínica y Medicina de Urgencias. Miembro experto de la Red de Toxicología de México (Redtox).",
+    "medicalSpecialty": "Toxicología Clínica",
+    "availableService": [
+      { "@type": "MedicalTherapy", "name": "Atención de fauna de ponzoña: alacranes, serpientes, arañas" },
+      { "@type": "MedicalTherapy", "name": "Toxicología marina: medusas, rayas, pepino de mar" },
+      { "@type": "MedicalTherapy", "name": "Intoxicación por medicamentos y sustancias" },
+      { "@type": "MedicalTherapy", "name": "Micología y botánica tóxica: hongos venenosos, plantas" }
+    ],
+    "telephone": "+520000000000",
+    "knowsLanguage": "es",
+    "url": "https://martinpartidac.github.io/sitio-dra-itandehuitl/"
+  }
+  </script>
+
   <style>
     :root {
       /* Tema claro: azul como acento + toque de calidez + vino como acento terciario */
@@ -36,6 +66,9 @@
       --bg-section-alt: #f5f4f3;
       --text-primary: #0f172a;
       --text-secondary: #475569;
+      --emergency: #e11d48;
+      --emergency-dark: #be123c;
+      --emergency-soft: rgba(225, 29, 72, 0.1);
       --accent-success: #059669;
       --accent-success-soft: rgba(5, 150, 105, 0.1);
       --shadow-rest: 0 1px 3px rgba(0, 0, 0, 0.04);
@@ -197,14 +230,14 @@
     }
 
     .nav-cta.btn-urgent {
-      background: var(--blue-urgent);
+      background: var(--emergency);
       color: var(--white);
       font-weight: 700;
-      box-shadow: var(--shadow-rest), 0 2px 12px rgba(29, 78, 216, 0.4);
+      box-shadow: var(--shadow-rest), 0 2px 12px rgba(225, 29, 72, 0.4);
     }
 
     .nav-cta.btn-urgent:hover {
-      background: var(--blue);
+      background: var(--emergency-dark);
       color: var(--white);
     }
 
@@ -406,13 +439,24 @@
     }
 
     .btn-primary.btn-urgent {
-      background: var(--blue-urgent);
-      box-shadow: var(--shadow-raised), 0 2px 20px rgba(29, 78, 216, 0.45);
+      background: var(--emergency);
+      box-shadow: var(--shadow-raised), 0 2px 20px rgba(225, 29, 72, 0.45);
+      animation: pulse-urgent 2.5s ease-in-out infinite;
     }
 
     .btn-primary.btn-urgent:hover {
-      background: var(--blue);
-      box-shadow: var(--shadow-hover);
+      background: var(--emergency-dark);
+      box-shadow: 0 8px 28px rgba(225, 29, 72, 0.5);
+      animation: none;
+    }
+
+    @keyframes pulse-urgent {
+      0%, 100% { box-shadow: var(--shadow-raised), 0 2px 20px rgba(225, 29, 72, 0.45); }
+      50% { box-shadow: var(--shadow-raised), 0 2px 28px rgba(225, 29, 72, 0.7); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .btn-primary.btn-urgent { animation: none; }
     }
 
     .btn-secondary {
@@ -452,15 +496,16 @@
       width: 100%;
       height: 100%;
       border-radius: 50%;
-      background: linear-gradient(145deg, #f5f4f3 0%, #e8e6e4 100%);
+      background: linear-gradient(145deg, #f0f4ff 0%, #e8ecf4 100%);
       display: flex;
+      flex-direction: column;
       align-items: center;
       justify-content: center;
       font-size: 0.85rem;
       color: var(--muted-dark);
       text-align: center;
       padding: 2rem;
-      border: 2px solid var(--border-light);
+      border: 2px dashed rgba(37, 99, 235, 0.2);
     }
 
     /* ----- Sections ----- */
@@ -650,6 +695,64 @@
       height: 6px;
       border-radius: 50%;
       background: var(--blue-light);
+    }
+
+    /* Sección de ubicación */
+    .location-section {
+      background: var(--bg-section-alt);
+    }
+
+    .location-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 2rem;
+    }
+
+    .location-card {
+      padding: 2rem;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border-light);
+      background: var(--card-bg);
+      box-shadow: var(--shadow-rest);
+      transition: all 0.3s ease;
+    }
+
+    .location-card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-hover);
+      border-color: rgba(37, 99, 235, 0.2);
+    }
+
+    .location-icon-wrap {
+      width: 48px;
+      height: 48px;
+      border-radius: 14px;
+      background: var(--blue-soft);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.25rem;
+      border: 1px solid rgba(37, 99, 235, 0.15);
+    }
+
+    .location-icon-wrap svg {
+      width: 24px;
+      height: 24px;
+      color: var(--blue-light);
+    }
+
+    .location-card h3 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      margin-bottom: 0.625rem;
+      letter-spacing: -0.02em;
+    }
+
+    .location-card p {
+      font-size: 0.9rem;
+      color: var(--muted);
+      line-height: 1.7;
     }
 
     /* Guía primera respuesta */
@@ -1391,19 +1494,6 @@
     }
 
     /* ===== MEJORAS DE NAVEGACIÓN Y UX ===== */
-    
-    /* Barra de progreso de lectura */
-    .reading-progress {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 0%;
-      height: 3px;
-      background: linear-gradient(90deg, var(--blue-light), var(--blue-bright));
-      z-index: 1001;
-      transition: width 0.1s ease-out;
-      box-shadow: 0 0 10px rgba(37, 99, 235, 0.5);
-    }
 
     /* Botón volver arriba */
     .scroll-to-top {
@@ -1701,9 +1791,6 @@
   <!-- Skip to main content link (accesibilidad) -->
   <a href="#hero" class="skip-link">Saltar al contenido principal</a>
 
-  <!-- Barra de progreso de lectura -->
-  <div class="reading-progress" id="readingProgress"></div>
-
   <nav id="navbar">
     <div class="nav-inner">
       <a href="#hero" class="nav-logo">Dra. Itandehuitl Arango</a>
@@ -1721,6 +1808,7 @@
       <ul class="nav-links">
         <li><a href="#por-que">Por qué elegirme</a></li>
         <li><a href="#servicios">Servicios</a></li>
+        <li><a href="#ubicacion">Dónde atiendo</a></li>
         <li><a href="#guia">Guía de emergencia</a></li>
         <li><a href="#contacto">Contacto</a></li>
         <li><a href="tel:+520000000000" class="nav-cta btn-urgent">Urgencia 24/7</a></li>
@@ -1753,13 +1841,27 @@
           <span>Miembro Experto · Red de Toxicología de México (Redtox)</span>
         </div>
         <div class="cta-row">
-          <a href="tel:+520000000000" class="btn btn-primary btn-urgent">Urgencia toxicológica 24/7</a>
-          <a href="https://wa.me/520000000000" class="btn btn-secondary">Consulta inmediata</a>
+          <a href="tel:+520000000000" class="btn btn-primary btn-urgent">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+            </svg>
+            Urgencia 24/7
+          </a>
+          <a href="https://wa.me/520000000000" class="btn btn-secondary">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+            </svg>
+            Consulta por WhatsApp
+          </a>
         </div>
       </div>
       <div class="photo-wrap">
-        <div class="photo-placeholder" aria-hidden="true">
-          Foto profesional<br />Dra. Itandehuitl Arango
+        <div class="photo-placeholder" aria-label="Foto de la Dra. Itandehuitl Arango Castillo">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" style="width:64px;height:64px;opacity:0.25;margin-bottom:0.75rem">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+            <circle cx="12" cy="7" r="4"/>
+          </svg>
+          <span style="font-size:0.8rem;opacity:0.5;">Dra. Itandehuitl Arango</span>
         </div>
       </div>
     </div>
@@ -1787,7 +1889,8 @@
       </article>
       <article class="why-card">
         <svg class="why-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+          <circle cx="12" cy="8" r="6"/>
+          <path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"/>
         </svg>
         <h3>Especialización única</h3>
         <p>Única especialista en México con enfoque integral en fauna de ponzoña, toxicología marina (medusas, rayas) y manejo avanzado de intoxicaciones por hongos venenosos.</p>
@@ -1835,10 +1938,10 @@
       </div>
       <div class="stat-card">
         <svg class="stat-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+          <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
         </svg>
-        <div class="stat-number" data-target="100">0<span class="stat-suffix">%</span></div>
-        <div class="stat-label">Compromiso con la atención</div>
+        <div class="stat-number" data-target="10">0<span class="stat-suffix">min</span></div>
+        <div class="stat-label">Tiempo de respuesta en urgencias</div>
       </div>
     </div>
   </section>
@@ -1875,8 +1978,8 @@
       </article>
       <article class="service-card">
         <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M12 2v4m0 12v4M4.93 4.93l2.83 2.83m8.48 8.48l2.83 2.83M2 12h4m12 0h4M4.93 19.07l2.83-2.83m8.48-8.48l2.83-2.83"/>
-          <circle cx="12" cy="12" r="4"/>
+          <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10z"/>
+          <path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/>
         </svg>
         <h3>Micología y botánica</h3>
         <p>Intoxicación crítica por Amanita phalloides y otros hongos venenosos. Diagnóstico temprano para reducir daño hepático y complicaciones.</p>
@@ -1887,7 +1990,8 @@
       </article>
       <article class="service-card">
         <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M9 3v2m6-2v2M9 19v2m6-2v2M3 9h2m14 0h2M3 15h2m14 0h2M7 19h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2H7a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2Z"/>
+          <path d="m10.5 20.5 10-10a4.95 4.95 0 1 0-7-7l-10 10a4.95 4.95 0 1 0 7 7Z"/>
+          <path d="m8.5 8.5 7 7"/>
         </svg>
         <h3>Sustancias y urgencia</h3>
         <p>Fármacos, insecticidas, productos del hogar, monóxido de carbono. Interconsulta hospitalaria en intento suicida y toxicología crítica.</p>
@@ -1896,6 +2000,44 @@
           <li>Exposición a químicos e insecticidas</li>
           <li>Monóxido de carbono</li>
         </ul>
+      </article>
+    </div>
+  </section>
+
+  <section class="location-section" id="ubicacion">
+    <p class="section-label">Cobertura y atención</p>
+    <h2 class="section-title serif">Dónde te puedo atender</h2>
+    <div class="location-grid">
+      <article class="location-card">
+        <div class="location-icon-wrap">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/>
+            <circle cx="12" cy="10" r="3"/>
+          </svg>
+        </div>
+        <h3>Consulta presencial</h3>
+        <p><!-- Agrega aquí la ciudad o clínica donde consultas, ej: "CDMX · Colonia Polanco" --><em style="color:var(--muted-dark); font-style:normal;">Ciudad y clínica por definir</em></p>
+      </article>
+      <article class="location-card">
+        <div class="location-icon-wrap">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect width="20" height="16" x="2" y="4" rx="2"/>
+            <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+          </svg>
+        </div>
+        <h3>Interconsulta nacional</h3>
+        <p>Asesoría telefónica y por videollamada para equipos médicos en todo México. Disponible 24 horas para urgencias toxicológicas.</p>
+      </article>
+      <article class="location-card">
+        <div class="location-icon-wrap">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 9h18v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V9Z"/>
+            <path d="m3 9 2.45-4.9A2 2 0 0 1 7.24 3h9.52a2 2 0 0 1 1.8 1.1L21 9"/>
+            <path d="M12 3v6"/>
+          </svg>
+        </div>
+        <h3>Red hospitalaria</h3>
+        <p>Coordinación directa con hospitales que cuentan con antídotos especializados y unidades de cuidados intensivos.</p>
       </article>
     </div>
   </section>
@@ -1912,7 +2054,7 @@
           <div class="testimonial-avatar">MC</div>
           <div class="testimonial-info">
             <h4>María C.</h4>
-            <p>Madre de paciente</p>
+            <p>Madre de paciente · CDMX</p>
           </div>
         </div>
       </article>
@@ -1924,7 +2066,7 @@
           <div class="testimonial-avatar">DR</div>
           <div class="testimonial-info">
             <h4>Dr. Roberto S.</h4>
-            <p>Médico de urgencias</p>
+            <p>Médico de urgencias · Hospital privado</p>
           </div>
         </div>
       </article>
@@ -1936,7 +2078,7 @@
           <div class="testimonial-avatar">AL</div>
           <div class="testimonial-info">
             <h4>Ana L.</h4>
-            <p>Paciente</p>
+            <p>Paciente · Zona costera de México</p>
           </div>
         </div>
       </article>
@@ -2127,8 +2269,13 @@
       </span>
     </div>
     <div class="cta-row" style="justify-content: center; margin-top: 1.75rem;">
-      <a href="tel:+520000000000" class="btn btn-primary btn-urgent">Urgencia toxicológica 24/7</a>
-      <a href="https://wa.me/520000000000" class="btn btn-secondary">Consulta inmediata</a>
+      <a href="tel:+520000000000" class="btn btn-primary btn-urgent">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+        </svg>
+        Urgencia 24/7
+      </a>
+      <a href="https://wa.me/520000000000" class="btn btn-secondary">Consulta por WhatsApp</a>
     </div>
   </section>
 
@@ -2158,16 +2305,6 @@
     };
     window.addEventListener('scroll', updateNavbar);
     updateNavbar(); // Initial check
-
-    // Barra de progreso de lectura
-    const readingProgress = document.getElementById('readingProgress');
-    const updateReadingProgress = () => {
-      const windowHeight = document.documentElement.scrollHeight - window.innerHeight;
-      const scrolled = (window.scrollY / windowHeight) * 100;
-      readingProgress.style.width = `${scrolled}%`;
-    };
-    window.addEventListener('scroll', updateReadingProgress);
-    updateReadingProgress(); // Initial check
 
     // Botón volver arriba
     const scrollToTopBtn = document.getElementById('scrollToTop');
@@ -2451,7 +2588,6 @@
       if (!ticking) {
         window.requestAnimationFrame(() => {
           updateNavbar();
-          updateReadingProgress();
           updateScrollToTop();
           updateActiveSection();
           ticking = false;
@@ -2462,7 +2598,6 @@
 
     // Reemplazar listeners de scroll individuales con uno optimizado
     window.removeEventListener('scroll', updateNavbar);
-    window.removeEventListener('scroll', updateReadingProgress);
     window.removeEventListener('scroll', updateScrollToTop);
     window.removeEventListener('scroll', updateActiveSection);
     
@@ -2473,7 +2608,6 @@
     // Asegurar que los elementos estén en su estado inicial correcto
     document.addEventListener('DOMContentLoaded', () => {
       updateNavbar();
-      updateReadingProgress();
       updateScrollToTop();
       updateActiveSection();
     });
