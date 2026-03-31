@@ -306,7 +306,7 @@
       padding: clamp(7rem, 9vw, 9rem) clamp(2rem, 5vw, 4rem) clamp(4rem, 8vw, 6rem);
       position: relative;
       isolation: isolate;
-      background: linear-gradient(165deg, var(--white) 0%, #f8f7f6 40%, var(--off-white) 100%);
+      background: linear-gradient(135deg, #0a1628 0%, #0f172a 45%, #111827 100%);
     }
 
     .hero::before {
@@ -314,8 +314,19 @@
       position: absolute;
       inset: 0;
       background:
-        radial-gradient(ellipse 70% 50% at 15% 20%, rgba(37, 99, 235, 0.06), transparent 55%),
-        radial-gradient(ellipse 50% 40% at 85% 80%, rgba(37, 99, 235, 0.03), transparent 55%);
+        radial-gradient(ellipse 65% 55% at 10% 15%, rgba(37, 99, 235, 0.18), transparent 60%),
+        radial-gradient(ellipse 45% 45% at 90% 85%, rgba(123, 41, 69, 0.12), transparent 55%),
+        radial-gradient(ellipse 30% 30% at 75% 20%, rgba(37, 99, 235, 0.08), transparent 50%);
+      z-index: -1;
+    }
+
+    /* Patrón de puntos sutil */
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image: radial-gradient(rgba(255,255,255,0.035) 1px, transparent 1px);
+      background-size: 28px 28px;
       z-index: -1;
     }
 
@@ -344,7 +355,7 @@
       font-size: 0.75rem;
       letter-spacing: 0.2em;
       text-transform: uppercase;
-      color: var(--wine);
+      color: var(--blue-bright);
       margin-bottom: 0.875rem;
       font-weight: 600;
     }
@@ -355,7 +366,7 @@
       line-height: 1.12;
       letter-spacing: -0.03em;
       margin-bottom: 1.25rem;
-      color: var(--text-primary);
+      color: #ffffff;
       font-family: 'Playfair Display', serif;
     }
 
@@ -363,7 +374,7 @@
       display: block;
       font-size: 0.48em;
       font-weight: 400;
-      color: var(--text-secondary);
+      color: rgba(255,255,255,0.6);
       letter-spacing: 0.01em;
       margin-top: 0.5em;
       font-family: 'Inter', sans-serif;
@@ -372,7 +383,7 @@
 
     .hero-tagline {
       font-size: clamp(0.95rem, 1.1vw + 0.4rem, 1.1rem);
-      color: var(--text-secondary);
+      color: rgba(255,255,255,0.72);
       margin-bottom: 1.75rem;
       line-height: 1.75;
       letter-spacing: -0.01em;
@@ -384,12 +395,12 @@
       align-items: center;
       gap: 0.625rem;
       padding: 0.75rem 1.5rem;
-      border: 1.5px solid rgba(37, 99, 235, 0.25);
+      border: 1px solid rgba(255,255,255,0.15);
       border-radius: 999px;
-      background: linear-gradient(135deg, var(--white) 0%, var(--blue-soft) 100%);
-      box-shadow: var(--shadow-rest);
+      background: rgba(255,255,255,0.07);
+      backdrop-filter: blur(12px);
       font-size: 0.85rem;
-      color: var(--text-primary);
+      color: rgba(255,255,255,0.85);
       margin-bottom: 1.75rem;
       margin-left: 0;
     }
@@ -460,12 +471,29 @@
     }
 
     .btn-secondary {
-      background: transparent;
-      color: var(--text-primary);
-      border: 1.5px solid var(--border-light);
+      background: rgba(255,255,255,0.08);
+      color: rgba(255,255,255,0.9);
+      border: 1.5px solid rgba(255,255,255,0.2);
+      backdrop-filter: blur(8px);
     }
 
     .btn-secondary:hover {
+      border-color: rgba(255,255,255,0.4);
+      background: rgba(255,255,255,0.14);
+      color: #ffffff;
+    }
+
+    /* Botón secundario fuera del hero (secciones claras) */
+    section .btn-secondary,
+    .trust-section .btn-secondary {
+      background: transparent;
+      color: var(--text-primary);
+      border: 1.5px solid var(--border-light);
+      backdrop-filter: none;
+    }
+
+    section .btn-secondary:hover,
+    .trust-section .btn-secondary:hover {
       border-color: var(--blue-light);
       background: var(--blue-soft);
       color: var(--blue-dark);
@@ -481,15 +509,77 @@
     .photo-wrap::before {
       content: "";
       position: absolute;
-      inset: -2px;
+      inset: -3px;
       border-radius: 50%;
-      padding: 2px;
-      background: var(--blue-light);
+      padding: 3px;
+      background: linear-gradient(135deg, var(--blue-light), var(--blue-bright), rgba(255,255,255,0.3));
       -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
       mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
       -webkit-mask-composite: xor;
       mask-composite: exclude;
-      opacity: 0.7;
+      opacity: 0.9;
+    }
+
+    /* Badge flotante de hospital */
+    .photo-badge {
+      position: absolute;
+      bottom: 8%;
+      left: -8%;
+      background: rgba(15, 23, 42, 0.92);
+      border: 1px solid rgba(255,255,255,0.12);
+      backdrop-filter: blur(16px);
+      border-radius: 14px;
+      padding: 0.75rem 1.1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.625rem;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+      z-index: 2;
+      max-width: 220px;
+    }
+
+    .photo-badge-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      background: var(--blue-soft);
+      border: 1px solid rgba(37,99,235,0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .photo-badge-icon svg {
+      width: 18px;
+      height: 18px;
+      color: var(--blue-bright);
+    }
+
+    .photo-badge-text {
+      line-height: 1.3;
+    }
+
+    .photo-badge-text strong {
+      display: block;
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: #ffffff;
+      letter-spacing: -0.01em;
+    }
+
+    .photo-badge-text span {
+      font-size: 0.72rem;
+      color: rgba(255,255,255,0.55);
+    }
+
+    @media (max-width: 900px) {
+      .photo-badge {
+        bottom: -4%;
+        left: 50%;
+        transform: translateX(-50%);
+        white-space: nowrap;
+      }
     }
 
     .photo-img {
@@ -1827,7 +1917,7 @@
           <span class="sub">Experta en Medicina de Urgencias y Toxicología Clínica · Miembro de Redtox</span>
         </h1>
         <p class="hero-tagline">
-          Atención de urgencia especializada en intoxicaciones, fauna de ponzoña y toxicología marina. Calma y precisión cuando más importa, para ti, tu familia y equipos hospitalarios.
+          Cuando un alacrán pica, una serpiente muerde o una medusa lastima — hay una sola especialista en México con dominio integral de los tres escenarios. Urgencias toxicológicas con respaldo del CMN La Raza.
         </p>
         <div class="redtox-badge">
           <span></span>
@@ -1850,6 +1940,19 @@
       </div>
       <div class="photo-wrap">
         <img src="ita2.JPG" alt="Dra. Itandehuitl Arango Castillo — Especialista en Toxicología Clínica" class="photo-img" />
+        <div class="photo-badge">
+          <div class="photo-badge-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M3 9h18v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V9Z"/>
+              <path d="m3 9 2.45-4.9A2 2 0 0 1 7.24 3h9.52a2 2 0 0 1 1.8 1.1L21 9"/>
+              <path d="M12 3v6"/>
+            </svg>
+          </div>
+          <div class="photo-badge-text">
+            <strong>CMN La Raza · IMSS</strong>
+            <span>Toxicología Clínica</span>
+          </div>
+        </div>
       </div>
     </div>
   </header>
