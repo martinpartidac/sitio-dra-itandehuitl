@@ -640,10 +640,15 @@
 
     /* Hero responsive */
     @media (max-width: 900px) {
+      .hero {
+        min-height: auto;
+        padding-bottom: clamp(48px, 8vw, 72px);
+      }
       .hero-inner {
         grid-template-columns: 1fr;
         text-align: center;
         justify-items: center;
+        gap: 32px;
       }
       .hero-content {
         order: 2;
@@ -665,22 +670,37 @@
         margin: 0 auto;
       }
       .hero-photo-circle {
-        width: clamp(180px, 50vw, 240px);
-        height: clamp(180px, 50vw, 240px);
+        width: clamp(160px, 45vw, 220px);
+        height: clamp(160px, 45vw, 220px);
       }
       .hero-float-badge {
-        bottom: -10%;
+        bottom: -14%;
         left: 50%;
-        transform: translateX(-60%);
+        transform: translateX(-50%);
+        font-size: 0.6875rem;
+        padding: 8px 12px;
       }
       .hero-float-redtox {
         top: -6%;
-        right: 4%;
+        right: 0%;
+        font-size: 0.6875rem;
+        padding: 5px 10px;
       }
       .hero-ctas {
         align-items: stretch;
         max-width: 400px;
         width: 100%;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero-float-badge,
+      .hero-float-redtox {
+        display: none;
+      }
+      .hero-photo-circle {
+        width: clamp(140px, 48vw, 180px);
+        height: clamp(140px, 48vw, 180px);
       }
     }
 
@@ -828,6 +848,16 @@
     @media (max-width: 768px) {
       .quien-grid {
         grid-template-columns: 1fr;
+      }
+      .quien-openquote {
+        font-size: clamp(4rem, 10vw, 7rem);
+      }
+    }
+
+    @media (max-width: 480px) {
+      .quien-openquote {
+        font-size: 3.5rem;
+        margin-bottom: 4px;
       }
     }
 
