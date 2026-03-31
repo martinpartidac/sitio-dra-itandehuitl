@@ -492,20 +492,13 @@
       opacity: 0.7;
     }
 
-    .photo-placeholder {
+    .photo-img {
       width: 100%;
       height: 100%;
       border-radius: 50%;
-      background: linear-gradient(145deg, #f0f4ff 0%, #e8ecf4 100%);
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      font-size: 0.85rem;
-      color: var(--muted-dark);
-      text-align: center;
-      padding: 2rem;
-      border: 2px dashed rgba(37, 99, 235, 0.2);
+      object-fit: cover;
+      object-position: center top;
+      display: block;
     }
 
     /* ----- Sections ----- */
@@ -1856,13 +1849,7 @@
         </div>
       </div>
       <div class="photo-wrap">
-        <div class="photo-placeholder" aria-label="Foto de la Dra. Itandehuitl Arango Castillo">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" style="width:64px;height:64px;opacity:0.25;margin-bottom:0.75rem">
-            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
-            <circle cx="12" cy="7" r="4"/>
-          </svg>
-          <span style="font-size:0.8rem;opacity:0.5;">Dra. Itandehuitl Arango</span>
-        </div>
+        <img src="ita2.JPG" alt="Dra. Itandehuitl Arango Castillo — Especialista en Toxicología Clínica" class="photo-img" />
       </div>
     </div>
   </header>
