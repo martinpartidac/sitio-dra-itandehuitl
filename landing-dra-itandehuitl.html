@@ -287,35 +287,52 @@
 
       .nav-links {
         position: fixed;
-        top: 70px;
+        top: 0;
         left: 0;
         right: 0;
+        bottom: 0;
         flex-direction: column;
-        background: var(--white);
-        backdrop-filter: blur(20px);
+        justify-content: center;
+        background: var(--navy);
         padding: 2rem;
-        border-bottom: 1px solid var(--border-light);
-        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
-        transform: translateY(-100%);
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+        transform: translateX(100%);
         opacity: 0;
         visibility: hidden;
-        transition: all 0.3s ease;
+        transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+        gap: 0.5rem;
       }
 
       .nav-links.active {
-        transform: translateY(0);
+        transform: translateX(0);
         opacity: 1;
         visibility: visible;
       }
 
       .nav-links a {
-        font-size: 1rem;
-        padding: 0.75rem 0;
+        font-size: 1.2rem;
+        padding: 1rem 0;
+        color: rgba(255,255,255,0.85) !important;
+        border-bottom: 1px solid rgba(255,255,255,0.08);
+      }
+
+      .nav-links a:hover {
+        color: #ffffff !important;
+      }
+
+      .nav-links a::after {
+        display: none;
       }
 
       .nav-cta {
         width: 100%;
         text-align: center;
+        margin-top: 0.5rem;
+      }
+
+      .nav-cta.btn-urgent {
+        background: var(--emergency) !important;
+        color: white !important;
       }
     }
 
@@ -362,10 +379,28 @@
     }
 
     @media (max-width: 900px) {
-      .hero-inner { grid-template-columns: 1fr; text-align: center; }
-      .hero .photo-wrap { margin: 0 auto; }
+      .hero {
+        min-height: auto;
+        padding-top: clamp(5rem, 12vw, 7rem);
+        padding-bottom: clamp(3rem, 8vw, 5rem);
+      }
+
+      .hero-inner {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 2.5rem;
+      }
+
+      /* Foto primero en mobile */
+      .hero .photo-wrap {
+        order: -1;
+        margin: 0 auto;
+        max-width: 220px;
+      }
+
       .hero .cta-row { justify-content: center; }
-      .hero .redtox-badge { margin-left: 0; }
+      .hero .redtox-badge { margin: 0 auto 1.75rem; }
+      .hero-content { max-width: 100%; }
     }
 
     .hero-content { 
@@ -1558,9 +1593,44 @@
       }
 
       .hero h1 {
-        font-size: 2.15rem;
+        font-size: 1.9rem;
         line-height: 1.18;
       }
+
+      .hero-tagline {
+        font-size: 0.95rem;
+      }
+
+      /* Botones hero apilados en móvil chico */
+      .hero .cta-row {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.75rem;
+      }
+
+      .hero .cta-row .btn {
+        width: 100%;
+        max-width: 320px;
+        justify-content: center;
+      }
+
+      /* Badge de foto en mobile */
+      .photo-badge {
+        bottom: -14%;
+        left: 50%;
+        transform: translateX(-50%);
+        white-space: nowrap;
+        padding: 0.625rem 0.875rem;
+        gap: 0.5rem;
+      }
+
+      .photo-badge-icon {
+        width: 28px;
+        height: 28px;
+      }
+
+      .photo-badge-text strong { font-size: 0.72rem; }
+      .photo-badge-text span { font-size: 0.65rem; }
 
       .section-title {
         font-size: 1.75rem;
@@ -1635,6 +1705,36 @@
 
       .stat-label {
         font-size: 0.9rem;
+      }
+
+      /* Banda de urgencia en guía */
+      .guide-urgency-band {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.75rem;
+        padding: 1rem;
+      }
+
+      .guide-urgency-cta {
+        width: 100%;
+        text-align: center;
+        padding: 0.75rem 1rem;
+      }
+
+      /* Location cards apiladas */
+      .location-grid {
+        grid-template-columns: 1fr;
+      }
+
+      /* Why cards sin padding izquierdo excesivo */
+      .why-card {
+        padding-left: 1rem;
+      }
+
+      /* Secciones con menos padding vertical */
+      section {
+        padding-top: clamp(3rem, 8vw, 5rem);
+        padding-bottom: clamp(3rem, 8vw, 5rem);
       }
     }
 
