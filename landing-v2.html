@@ -1,0 +1,2264 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dra. Itandehuitl Arango Castillo — Toxicología Clínica · Urgencias</title>
+  <meta name="description" content="Dra. Itandehuitl Arango Castillo, especialista en Toxicología Clínica y Medicina de Urgencias. CMN La Raza IMSS. Atención 24h en picaduras, mordeduras, intoxicaciones y fauna de ponzoña." />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Dra. Itandehuitl Arango Castillo — Toxicología Clínica" />
+  <meta property="og:description" content="Especialista en toxicología clínica y urgencias. Fauna de ponzoña, toxicología marina, hongos venenosos e intoxicaciones agudas. CMN La Raza · IMSS · Redtox." />
+  <meta property="og:image" content="ita2.JPG" />
+  <meta property="og:locale" content="es_MX" />
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://draita.mx/" />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Schema.org Physician -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Physician",
+    "name": "Dra. Itandehuitl Arango Castillo",
+    "description": "Especialista en Toxicología Clínica y Medicina de Urgencias. CMN La Raza IMSS.",
+    "medicalSpecialty": ["Toxicología Clínica", "Medicina de Urgencias"],
+    "hospitalAffiliation": {
+      "@type": "Hospital",
+      "name": "Centro Médico Nacional La Raza",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Ciudad de México",
+        "addressCountry": "MX"
+      }
+    },
+    "telephone": "+520000000000",
+    "image": "ita2.JPG"
+  }
+  </script>
+
+  <style>
+    /* ============================================================
+       CSS CUSTOM PROPERTIES
+    ============================================================ */
+    :root {
+      --bg:               #070d1a;
+      --bg-2:             #0d1627;
+      --bg-3:             #111e35;
+      --text:             #eef2ff;
+      --text-muted:       rgba(238, 242, 255, 0.55);
+      --text-subtle:      rgba(238, 242, 255, 0.35);
+      --blue:             #3b82f6;
+      --blue-bright:      #60a5fa;
+      --blue-glow:        rgba(59, 130, 246, 0.15);
+      --teal:             #14b8a6;
+      --teal-glow:        rgba(20, 184, 166, 0.12);
+      --emergency:        #e11d48;
+      --emergency-glow:   rgba(225, 29, 72, 0.15);
+      --border:           rgba(255, 255, 255, 0.07);
+      --border-bright:    rgba(255, 255, 255, 0.14);
+      --radius:           16px;
+      --radius-sm:        10px;
+      --strip-h:          48px;
+      --nav-h:            68px;
+    }
+
+    /* ============================================================
+       RESET & BASE
+    ============================================================ */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      font-size: 16px;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', sans-serif;
+      font-weight: 400;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      overflow-x: hidden;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    /* ============================================================
+       SKIP LINK (Accessibility)
+    ============================================================ */
+    .skip-link {
+      position: fixed;
+      top: -100%;
+      left: 16px;
+      background: var(--blue);
+      color: #fff;
+      padding: 10px 18px;
+      border-radius: var(--radius-sm);
+      font-size: 0.875rem;
+      font-weight: 600;
+      z-index: 9999;
+      transition: top 0.2s;
+    }
+    .skip-link:focus {
+      top: calc(var(--strip-h) + 8px);
+    }
+
+    /* ============================================================
+       EMERGENCY STRIP
+    ============================================================ */
+    .emergency-strip {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: var(--strip-h);
+      background: rgba(225, 29, 72, 0.92);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      z-index: 2000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+      padding: 0 20px;
+    }
+
+    .strip-text {
+      font-size: 0.8125rem;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+      color: rgba(255,255,255,0.9);
+      white-space: nowrap;
+    }
+
+    .strip-phone {
+      font-size: 0.8125rem;
+      font-weight: 700;
+      color: #fff;
+      letter-spacing: 0.04em;
+      white-space: nowrap;
+    }
+
+    .strip-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #fff;
+      color: var(--emergency);
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 6px 16px;
+      border-radius: 999px;
+      letter-spacing: 0.03em;
+      white-space: nowrap;
+      transition: transform 0.15s, opacity 0.15s;
+    }
+    .strip-btn:hover {
+      transform: scale(1.03);
+      opacity: 0.92;
+    }
+    .strip-btn svg {
+      flex-shrink: 0;
+    }
+
+    /* Hide text/phone on very small screens, keep button */
+    @media (max-width: 480px) {
+      .strip-text,
+      .strip-phone {
+        display: none;
+      }
+      .emergency-strip {
+        justify-content: center;
+      }
+      .strip-btn {
+        font-size: 0.8125rem;
+        padding: 8px 24px;
+      }
+    }
+
+    /* ============================================================
+       NAVIGATION
+    ============================================================ */
+    .nav {
+      position: fixed;
+      top: var(--strip-h);
+      left: 0;
+      right: 0;
+      height: var(--nav-h);
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      padding: 0 clamp(16px, 5vw, 60px);
+      transition: background 0.3s, box-shadow 0.3s, backdrop-filter 0.3s;
+    }
+
+    .nav.scrolled {
+      background: rgba(7, 13, 26, 0.97);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      box-shadow: 0 1px 0 var(--border-bright);
+    }
+
+    .nav-inner {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--text);
+      letter-spacing: 0.01em;
+      line-height: 1;
+    }
+    .nav-logo span {
+      color: var(--teal);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 36px;
+    }
+
+    .nav-links a {
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--text-muted);
+      letter-spacing: 0.02em;
+      transition: color 0.2s;
+      position: relative;
+    }
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: var(--teal);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.25s;
+    }
+    .nav-links a:hover {
+      color: var(--text);
+    }
+    .nav-links a:hover::after {
+      transform: scaleX(1);
+    }
+
+    .nav-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      background: var(--emergency);
+      color: #fff;
+      font-size: 0.8125rem;
+      font-weight: 600;
+      padding: 9px 20px;
+      border-radius: 999px;
+      letter-spacing: 0.02em;
+      transition: background 0.2s, transform 0.15s;
+    }
+    .nav-cta:hover {
+      background: #c4173f;
+      transform: scale(1.03);
+    }
+
+    /* Hamburger */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 8px;
+      background: none;
+      border: none;
+      border-radius: var(--radius-sm);
+    }
+    .hamburger span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--text);
+      border-radius: 2px;
+      transition: transform 0.3s, opacity 0.3s;
+    }
+
+    /* Mobile menu overlay */
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(7, 13, 26, 0.98);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+      z-index: 1500;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 36px;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s;
+    }
+    .mobile-menu.open {
+      display: flex;
+      opacity: 1;
+      pointer-events: all;
+    }
+
+    .mobile-menu a {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.75rem, 6vw, 2.5rem);
+      font-weight: 600;
+      color: var(--text);
+      transition: color 0.2s;
+    }
+    .mobile-menu a:hover {
+      color: var(--teal);
+    }
+
+    .mobile-menu-close {
+      position: absolute;
+      top: calc(var(--strip-h) + 16px);
+      right: 20px;
+      background: none;
+      border: 1px solid var(--border-bright);
+      color: var(--text);
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: background 0.2s, border-color 0.2s;
+    }
+    .mobile-menu-close:hover {
+      background: var(--bg-3);
+      border-color: var(--text-muted);
+    }
+
+    @media (max-width: 768px) {
+      .nav-links,
+      .nav-cta {
+        display: none;
+      }
+      .hamburger {
+        display: flex;
+      }
+    }
+
+    /* ============================================================
+       HERO
+    ============================================================ */
+    .hero {
+      min-height: 100svh;
+      padding-top: calc(var(--strip-h) + var(--nav-h));
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(135deg, var(--bg) 0%, #0a1220 50%, var(--bg-2) 100%);
+    }
+
+    /* Dot grid overlay */
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: radial-gradient(circle, rgba(238,242,255,0.03) 1px, transparent 1px);
+      background-size: 32px 32px;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* Radial glow behind photo */
+    .hero-glow {
+      position: absolute;
+      top: 50%;
+      right: 10%;
+      transform: translate(0, -50%);
+      width: 520px;
+      height: 520px;
+      background: radial-gradient(circle, rgba(59, 130, 246, 0.12) 0%, transparent 70%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 60px clamp(16px, 5vw, 60px);
+      display: grid;
+      grid-template-columns: 60% 40%;
+      align-items: center;
+      gap: 48px;
+    }
+
+    /* Hero left */
+    .hero-label {
+      display: inline-block;
+      font-size: 0.6875rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      color: var(--teal);
+      text-transform: uppercase;
+      margin-bottom: 24px;
+      padding: 6px 14px;
+      border: 1px solid rgba(20, 184, 166, 0.3);
+      border-radius: 999px;
+      background: rgba(20, 184, 166, 0.07);
+    }
+
+    .hero-heading {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.6rem, 5vw, 4.2rem);
+      font-weight: 700;
+      line-height: 1.1;
+      color: var(--text);
+      margin-bottom: 24px;
+      letter-spacing: -0.01em;
+    }
+    .hero-heading em {
+      font-style: italic;
+      font-weight: 400;
+      color: var(--blue-bright);
+    }
+
+    .hero-tagline {
+      font-size: clamp(0.9375rem, 1.5vw, 1.0625rem);
+      color: var(--text-muted);
+      font-weight: 400;
+      line-height: 1.7;
+      max-width: 520px;
+      margin-bottom: 40px;
+    }
+
+    .hero-ctas {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      margin-bottom: 32px;
+    }
+
+    .btn-emergency {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      background: var(--emergency);
+      color: #fff;
+      font-size: 1rem;
+      font-weight: 600;
+      padding: 18px 32px;
+      border-radius: var(--radius-sm);
+      letter-spacing: 0.01em;
+      transition: background 0.2s, transform 0.15s;
+      position: relative;
+      border: none;
+      cursor: pointer;
+    }
+    .btn-emergency::before {
+      content: '';
+      position: absolute;
+      inset: -3px;
+      border-radius: calc(var(--radius-sm) + 3px);
+      background: var(--emergency);
+      opacity: 0.3;
+      animation: pulse-ring 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    }
+    .btn-emergency:hover {
+      background: #c4173f;
+      transform: translateY(-1px);
+    }
+
+    @keyframes pulse-ring {
+      0%, 100% { transform: scale(1); opacity: 0.3; }
+      50% { transform: scale(1.06); opacity: 0; }
+    }
+
+    .btn-medical {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      background: transparent;
+      color: var(--blue-bright);
+      font-size: 1rem;
+      font-weight: 600;
+      padding: 17px 32px;
+      border-radius: var(--radius-sm);
+      letter-spacing: 0.01em;
+      border: 1.5px solid rgba(96, 165, 250, 0.4);
+      transition: background 0.2s, border-color 0.2s, transform 0.15s;
+    }
+    .btn-medical:hover {
+      background: rgba(59, 130, 246, 0.1);
+      border-color: var(--blue-bright);
+      transform: translateY(-1px);
+    }
+
+    .hero-badge-redtox {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.75rem;
+      font-weight: 500;
+      color: var(--text-subtle);
+      padding: 7px 14px;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      background: rgba(255,255,255,0.03);
+      letter-spacing: 0.04em;
+    }
+    .badge-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--teal);
+      flex-shrink: 0;
+    }
+
+    /* Hero right - photo */
+    .hero-photo-wrap {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+    }
+
+    .hero-photo-circle {
+      position: relative;
+      width: clamp(280px, 32vw, 400px);
+      height: clamp(280px, 32vw, 400px);
+      border-radius: 50%;
+      padding: 3px;
+      background: linear-gradient(135deg, var(--blue), var(--teal));
+      flex-shrink: 0;
+    }
+
+    .hero-photo-circle img {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: center 28%;
+      display: block;
+    }
+
+    /* Floating badge: CMN La Raza */
+    .hero-float-badge {
+      position: absolute;
+      bottom: 8%;
+      left: -10%;
+      background: rgba(13, 22, 39, 0.92);
+      border: 1px solid var(--border-bright);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      padding: 10px 16px;
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      white-space: nowrap;
+    }
+    .hero-float-badge .badge-icon {
+      width: 32px;
+      height: 32px;
+      background: var(--blue-glow);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .hero-float-badge .badge-text {
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--text);
+      line-height: 1.3;
+    }
+    .hero-float-badge .badge-sub {
+      font-size: 0.6875rem;
+      color: var(--text-muted);
+      font-weight: 400;
+    }
+
+    /* Floating badge: Redtox */
+    .hero-float-redtox {
+      position: absolute;
+      top: 4%;
+      right: -8%;
+      background: rgba(20, 184, 166, 0.12);
+      border: 1px solid rgba(20, 184, 166, 0.3);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      padding: 7px 14px;
+      border-radius: 999px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--teal);
+      letter-spacing: 0.05em;
+      white-space: nowrap;
+    }
+
+    /* Hero responsive */
+    @media (max-width: 900px) {
+      .hero-inner {
+        grid-template-columns: 1fr;
+        text-align: center;
+        justify-items: center;
+      }
+      .hero-content {
+        order: 2;
+      }
+      .hero-photo-side {
+        order: 1;
+      }
+      .hero-tagline {
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .hero-label {
+        margin-left: auto;
+        margin-right: auto;
+        display: block;
+        width: fit-content;
+      }
+      .hero-badge-redtox {
+        margin: 0 auto;
+      }
+      .hero-photo-circle {
+        width: clamp(180px, 50vw, 240px);
+        height: clamp(180px, 50vw, 240px);
+      }
+      .hero-float-badge {
+        bottom: -10%;
+        left: 50%;
+        transform: translateX(-60%);
+      }
+      .hero-float-redtox {
+        top: -6%;
+        right: 4%;
+      }
+      .hero-ctas {
+        align-items: stretch;
+        max-width: 400px;
+        width: 100%;
+      }
+    }
+
+    /* ============================================================
+       SECTION UTILITIES
+    ============================================================ */
+    .section {
+      padding: clamp(72px, 10vw, 120px) clamp(16px, 5vw, 60px);
+    }
+
+    .section-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .section-label {
+      font-size: 0.6875rem;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      color: var(--teal);
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+
+    .divider {
+      width: 40px;
+      height: 2px;
+      background: linear-gradient(to right, var(--blue), var(--teal));
+      border-radius: 2px;
+      margin-bottom: 20px;
+    }
+
+    /* ============================================================
+       QUIEN SOY
+    ============================================================ */
+    #quien {
+      background: var(--bg-2);
+      position: relative;
+      overflow: hidden;
+    }
+
+    #quien::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: linear-gradient(to right, transparent, var(--border-bright), transparent);
+    }
+
+    .quien-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(40px, 6vw, 80px);
+      align-items: start;
+    }
+
+    /* Pull quote side */
+    .quien-quote-side {
+      position: relative;
+    }
+
+    .quien-openquote {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(7rem, 12vw, 11rem);
+      font-weight: 700;
+      color: var(--blue);
+      line-height: 0.7;
+      margin-bottom: 8px;
+      opacity: 0.7;
+      user-select: none;
+    }
+
+    .quien-pullquote {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-size: clamp(1.0625rem, 1.8vw, 1.3125rem);
+      line-height: 1.65;
+      color: var(--text);
+      font-weight: 400;
+      margin-bottom: 20px;
+    }
+
+    .quien-attribution {
+      font-size: 0.8125rem;
+      font-weight: 500;
+      color: var(--text-subtle);
+      letter-spacing: 0.04em;
+    }
+    .quien-attribution::before {
+      content: '— ';
+    }
+
+    /* Text side */
+    .quien-heading {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.75rem, 3vw, 2.5rem);
+      font-weight: 700;
+      line-height: 1.2;
+      color: var(--text);
+      margin-bottom: 24px;
+    }
+
+    .quien-body {
+      font-size: clamp(0.9375rem, 1.3vw, 1rem);
+      color: var(--text-muted);
+      line-height: 1.8;
+      margin-bottom: 20px;
+    }
+
+    .credential-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 28px;
+    }
+
+    .credential-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      padding: 7px 14px;
+      border: 1px solid var(--border-bright);
+      border-radius: 999px;
+      background: rgba(255,255,255,0.03);
+      letter-spacing: 0.03em;
+    }
+    .credential-pill .dot-teal {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--teal);
+    }
+    .credential-pill .dot-blue {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--blue);
+    }
+
+    @media (max-width: 768px) {
+      .quien-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* ============================================================
+       ESPECIALIDADES
+    ============================================================ */
+    #especialidades {
+      background: var(--bg);
+      position: relative;
+    }
+
+    .esp-header {
+      margin-bottom: clamp(40px, 5vw, 64px);
+    }
+
+    .esp-heading {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 700;
+      line-height: 1.2;
+      color: var(--text);
+      max-width: 600px;
+    }
+
+    .esp-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+
+    .esp-card {
+      position: relative;
+      background: var(--bg-2);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: clamp(28px, 4vw, 44px);
+      overflow: hidden;
+      transition: border-color 0.3s, transform 0.2s;
+    }
+    .esp-card:hover {
+      transform: translateY(-3px);
+    }
+
+    /* Left accent border */
+    .esp-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      width: 3px;
+      border-radius: 0 0 0 var(--radius);
+    }
+    .esp-card.teal::before   { background: var(--teal); }
+    .esp-card.blue::before   { background: var(--blue); }
+    .esp-card.teal-l::before { background: linear-gradient(to bottom, var(--teal), #a3e635); }
+    .esp-card.blue-m::before { background: linear-gradient(to bottom, var(--blue), #818cf8); }
+
+    .esp-card:hover.teal   { border-color: rgba(20,184,166,0.3); }
+    .esp-card:hover.blue   { border-color: rgba(59,130,246,0.3); }
+    .esp-card:hover.teal-l { border-color: rgba(20,184,166,0.3); }
+    .esp-card:hover.blue-m { border-color: rgba(59,130,246,0.3); }
+
+    /* Giant background number */
+    .esp-num {
+      position: absolute;
+      top: 12px;
+      right: 20px;
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(5rem, 8vw, 8rem);
+      font-style: italic;
+      font-weight: 700;
+      color: rgba(255,255,255,0.04);
+      line-height: 1;
+      user-select: none;
+      pointer-events: none;
+    }
+
+    .esp-label {
+      font-size: 0.6875rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+    .teal .esp-label, .teal-l .esp-label { color: var(--teal); }
+    .blue .esp-label, .blue-m .esp-label { color: var(--blue-bright); }
+
+    .esp-card-heading {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.375rem, 2.2vw, 1.875rem);
+      font-weight: 700;
+      line-height: 1.2;
+      color: var(--text);
+      margin-bottom: 16px;
+    }
+
+    .esp-desc {
+      font-size: 0.9375rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+      margin-bottom: 20px;
+    }
+
+    .esp-list {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-bottom: 24px;
+    }
+
+    .esp-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+    .esp-list li::before {
+      content: '';
+      flex-shrink: 0;
+      margin-top: 7px;
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+    }
+    .teal .esp-list li::before,
+    .teal-l .esp-list li::before { background: var(--teal); }
+    .blue .esp-list li::before,
+    .blue-m .esp-list li::before { background: var(--blue-bright); }
+
+    .esp-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.875rem;
+      font-weight: 600;
+      transition: gap 0.2s, color 0.2s;
+    }
+    .teal .esp-link, .teal-l .esp-link {
+      color: var(--teal);
+    }
+    .blue .esp-link, .blue-m .esp-link {
+      color: var(--blue-bright);
+    }
+    .esp-link:hover {
+      gap: 10px;
+    }
+
+    @media (max-width: 720px) {
+      .esp-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* ============================================================
+       CÓMO FUNCIONA
+    ============================================================ */
+    #proceso {
+      background: var(--bg-3);
+      position: relative;
+      overflow: hidden;
+    }
+    #proceso::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 1px;
+      background: linear-gradient(to right, transparent, var(--border-bright), transparent);
+    }
+    #proceso::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 1px;
+      background: linear-gradient(to right, transparent, var(--border-bright), transparent);
+    }
+
+    .proceso-header {
+      text-align: center;
+      margin-bottom: clamp(40px, 5vw, 64px);
+    }
+
+    .proceso-heading {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.75rem, 3.5vw, 2.5rem);
+      font-weight: 700;
+      color: var(--text);
+    }
+
+    .proceso-steps {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      position: relative;
+    }
+
+    /* Connector line between steps */
+    .proceso-steps::before {
+      content: '';
+      position: absolute;
+      top: 44px;
+      left: calc(16.66% + 20px);
+      right: calc(16.66% + 20px);
+      height: 1px;
+      background: linear-gradient(to right, var(--blue-glow), var(--teal-glow));
+      border-top: 1px dashed var(--border-bright);
+    }
+
+    .proceso-step {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 32px 20px;
+    }
+
+    .paso-num-wrap {
+      position: relative;
+      margin-bottom: 24px;
+    }
+
+    .paso-icon-circle {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      background: var(--bg-2);
+      border: 1px solid var(--border-bright);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      z-index: 1;
+    }
+
+    .paso-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--text-subtle);
+      letter-spacing: 0.06em;
+      position: absolute;
+      top: -8px;
+      right: -8px;
+      background: var(--bg-3);
+      border: 1px solid var(--border);
+      padding: 2px 6px;
+      border-radius: 999px;
+      font-style: italic;
+      z-index: 2;
+    }
+
+    .paso-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.125rem;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 12px;
+    }
+
+    .paso-desc {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      line-height: 1.7;
+    }
+
+    @media (max-width: 680px) {
+      .proceso-steps {
+        grid-template-columns: 1fr;
+      }
+      .proceso-steps::before {
+        display: none;
+      }
+    }
+
+    /* ============================================================
+       GUÍA DE EMERGENCIA
+    ============================================================ */
+    #guia {
+      background: var(--bg-2);
+      position: relative;
+    }
+
+    .guia-urgency-band {
+      background: linear-gradient(135deg, rgba(225, 29, 72, 0.18), rgba(225, 29, 72, 0.08));
+      border: 1px solid rgba(225, 29, 72, 0.25);
+      border-radius: var(--radius);
+      padding: 20px 28px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      margin-bottom: 40px;
+      flex-wrap: wrap;
+    }
+
+    .guia-urgency-text {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex: 1;
+      min-width: 200px;
+    }
+
+    .urgency-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--emergency);
+      flex-shrink: 0;
+      box-shadow: 0 0 0 3px var(--emergency-glow);
+      animation: pulse-dot 2s ease-in-out infinite;
+    }
+
+    @keyframes pulse-dot {
+      0%, 100% { box-shadow: 0 0 0 3px var(--emergency-glow); }
+      50% { box-shadow: 0 0 0 7px rgba(225,29,72,0.05); }
+    }
+
+    .guia-urgency-label {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    .btn-call-guia {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--emergency);
+      color: #fff;
+      font-size: 0.875rem;
+      font-weight: 700;
+      padding: 12px 24px;
+      border-radius: var(--radius-sm);
+      white-space: nowrap;
+      transition: background 0.2s;
+    }
+    .btn-call-guia:hover {
+      background: #c4173f;
+    }
+
+    .guia-heading {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.75rem, 3vw, 2.25rem);
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 8px;
+    }
+
+    .guia-sub {
+      font-size: 1rem;
+      color: var(--text-muted);
+      margin-bottom: 32px;
+    }
+
+    /* Accordion */
+    .accordion {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .accordion-item {
+      background: var(--bg-3);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      overflow: hidden;
+      transition: border-color 0.2s;
+    }
+    .accordion-item.open,
+    .accordion-item:hover {
+      border-color: var(--border-bright);
+    }
+
+    .accordion-trigger {
+      width: 100%;
+      background: none;
+      border: none;
+      padding: 20px 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      cursor: pointer;
+      text-align: left;
+    }
+
+    .accordion-trigger-left {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .accordion-emoji {
+      font-size: 1.5rem;
+      flex-shrink: 0;
+      line-height: 1;
+    }
+
+    .accordion-title {
+      font-size: 1.0625rem;
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    .accordion-chevron {
+      flex-shrink: 0;
+      width: 20px;
+      height: 20px;
+      color: var(--text-subtle);
+      transition: transform 0.3s;
+    }
+    .accordion-item.open .accordion-chevron {
+      transform: rotate(180deg);
+      color: var(--teal);
+    }
+
+    .accordion-body {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .accordion-item.open .accordion-body {
+      max-height: 600px;
+    }
+
+    .accordion-content {
+      padding: 0 24px 24px;
+      border-top: 1px solid var(--border);
+    }
+
+    .accordion-cols {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+
+    .accordion-do,
+    .accordion-dont {
+      padding: 16px;
+      border-radius: var(--radius-sm);
+    }
+    .accordion-do {
+      background: rgba(20, 184, 166, 0.07);
+      border: 1px solid rgba(20, 184, 166, 0.18);
+    }
+    .accordion-dont {
+      background: rgba(225, 29, 72, 0.07);
+      border: 1px solid rgba(225, 29, 72, 0.18);
+    }
+
+    .accordion-col-label {
+      font-size: 0.6875rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+    .accordion-do .accordion-col-label { color: var(--teal); }
+    .accordion-dont .accordion-col-label { color: var(--emergency); }
+
+    .accordion-list {
+      list-style: disc;
+      padding-left: 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .accordion-list li {
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      line-height: 1.5;
+    }
+
+    .btn-accordion-call {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--emergency-glow);
+      border: 1px solid rgba(225, 29, 72, 0.3);
+      color: var(--emergency);
+      font-size: 0.875rem;
+      font-weight: 700;
+      padding: 10px 20px;
+      border-radius: var(--radius-sm);
+      transition: background 0.2s;
+    }
+    .btn-accordion-call:hover {
+      background: rgba(225, 29, 72, 0.2);
+    }
+
+    @media (max-width: 560px) {
+      .accordion-cols {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* ============================================================
+       CONTACTO
+    ============================================================ */
+    #contacto {
+      background: var(--bg);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    #contacto::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 1px;
+      background: linear-gradient(to right, transparent, var(--border-bright), transparent);
+    }
+
+    /* Subtle radial glow center */
+    .contacto-glow {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(59,130,246,0.06) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .contacto-inner {
+      position: relative;
+      z-index: 1;
+    }
+
+    .contacto-heading {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.25rem, 5vw, 3.75rem);
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 16px;
+      line-height: 1.15;
+    }
+
+    .contacto-sub {
+      font-size: clamp(0.9375rem, 1.5vw, 1.0625rem);
+      color: var(--text-muted);
+      max-width: 480px;
+      margin: 0 auto 48px;
+      line-height: 1.7;
+    }
+
+    .contacto-btns {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-bottom: 32px;
+    }
+
+    .btn-call-big {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      background: var(--emergency);
+      color: #fff;
+      font-size: clamp(0.9375rem, 1.5vw, 1.0625rem);
+      font-weight: 700;
+      padding: 18px 36px;
+      border-radius: var(--radius-sm);
+      letter-spacing: 0.01em;
+      transition: background 0.2s, transform 0.15s;
+    }
+    .btn-call-big:hover {
+      background: #c4173f;
+      transform: translateY(-2px);
+    }
+
+    .btn-whatsapp-big {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      background: rgba(20, 184, 166, 0.12);
+      border: 1.5px solid rgba(20, 184, 166, 0.4);
+      color: var(--teal);
+      font-size: clamp(0.9375rem, 1.5vw, 1.0625rem);
+      font-weight: 700;
+      padding: 18px 36px;
+      border-radius: var(--radius-sm);
+      letter-spacing: 0.01em;
+      transition: background 0.2s, border-color 0.2s, transform 0.15s;
+    }
+    .btn-whatsapp-big:hover {
+      background: rgba(20, 184, 166, 0.2);
+      border-color: var(--teal);
+      transform: translateY(-2px);
+    }
+
+    .contacto-24h {
+      font-size: 0.9375rem;
+      font-weight: 500;
+      color: var(--text-muted);
+      margin-bottom: 12px;
+    }
+    .contacto-24h strong {
+      color: var(--text);
+    }
+
+    .contacto-note {
+      font-size: 0.8125rem;
+      color: var(--text-subtle);
+      letter-spacing: 0.04em;
+    }
+
+    @media (max-width: 520px) {
+      .contacto-btns {
+        flex-direction: column;
+        align-items: stretch;
+        max-width: 360px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .btn-call-big,
+      .btn-whatsapp-big {
+        justify-content: center;
+      }
+    }
+
+    /* ============================================================
+       FOOTER
+    ============================================================ */
+    footer {
+      background: var(--bg);
+      border-top: 1px solid var(--border);
+      padding: 28px clamp(16px, 5vw, 60px);
+    }
+
+    .footer-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .footer-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    .footer-detail {
+      font-size: 0.8125rem;
+      color: var(--text-subtle);
+      letter-spacing: 0.03em;
+    }
+
+    .footer-year {
+      font-size: 0.8125rem;
+      color: var(--text-subtle);
+    }
+
+    /* ============================================================
+       FOCUS STATES (Accessibility)
+    ============================================================ */
+    :focus-visible {
+      outline: 2px solid var(--blue-bright);
+      outline-offset: 3px;
+      border-radius: 4px;
+    }
+
+    /* ============================================================
+       SMOOTH TRANSITIONS FOR ANCHOR TARGETS
+    ============================================================ */
+    section[id] {
+      scroll-margin-top: calc(var(--strip-h) + var(--nav-h) + 16px);
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- Skip link -->
+  <a class="skip-link" href="#main-content">Saltar al contenido principal</a>
+
+  <!-- ============================================================
+       EMERGENCY STRIP
+  ============================================================ -->
+  <div class="emergency-strip" role="banner" aria-label="Línea de emergencia toxicológica">
+    <span class="strip-text">¿Emergencia toxicológica?</span>
+    <span class="strip-phone">+52 00 0000 0000</span>
+    <a href="tel:+520000000000" class="strip-btn" aria-label="Llamar ahora al +52 00 0000 0000">
+      <!-- Phone icon -->
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+        <path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/>
+      </svg>
+      Llamar ahora
+    </a>
+  </div>
+
+  <!-- ============================================================
+       NAVIGATION
+  ============================================================ -->
+  <header>
+    <nav class="nav" id="main-nav" role="navigation" aria-label="Navegación principal">
+      <div class="nav-inner">
+        <a href="#" class="nav-logo" aria-label="Dra. Itandehuitl — inicio">
+          Dra. <span>Itandehuitl</span>
+        </a>
+
+        <ul class="nav-links" role="list">
+          <li><a href="#quien">Quién soy</a></li>
+          <li><a href="#especialidades">Especialidades</a></li>
+          <li><a href="#guia">Guía</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+
+        <a href="tel:+520000000000" class="nav-cta" aria-label="Llamar a la doctora en emergencia">
+          <!-- Small phone icon -->
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/>
+          </svg>
+          Urgencia
+        </a>
+
+        <button class="hamburger" id="hamburger-btn" aria-expanded="false" aria-controls="mobile-menu" aria-label="Abrir menú">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Mobile menu overlay -->
+    <div class="mobile-menu" id="mobile-menu" role="dialog" aria-modal="true" aria-label="Menú de navegación">
+      <button class="mobile-menu-close" id="mobile-menu-close" aria-label="Cerrar menú">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <line x1="18" y1="6" x2="6" y2="18"/>
+          <line x1="6" y1="6" x2="18" y2="18"/>
+        </svg>
+      </button>
+      <a href="#quien"           class="mobile-nav-link">Quién soy</a>
+      <a href="#especialidades"  class="mobile-nav-link">Especialidades</a>
+      <a href="#guia"            class="mobile-nav-link">Guía</a>
+      <a href="#contacto"        class="mobile-nav-link">Contacto</a>
+      <a href="tel:+520000000000" class="mobile-nav-link" style="color: var(--emergency);">Llamar ahora</a>
+    </div>
+  </header>
+
+  <!-- ============================================================
+       MAIN CONTENT
+  ============================================================ -->
+  <main id="main-content">
+
+    <!-- ========================================================
+         HERO
+    ======================================================== -->
+    <section class="hero" aria-label="Presentación">
+      <div class="hero-glow" aria-hidden="true"></div>
+
+      <div class="hero-inner">
+
+        <!-- Left: Text -->
+        <div class="hero-content">
+          <span class="hero-label" aria-label="Especialidad">TOXICOLOGÍA CLÍNICA · URGENCIAS 24/7</span>
+
+          <h1 class="hero-heading">
+            Cuando el veneno<br><em>no puede esperar.</em>
+          </h1>
+
+          <p class="hero-tagline">
+            Hay una sola especialista en México con dominio integral en fauna de ponzoña, toxicología marina y urgencias por sustancias. Disponible las 24 horas.
+          </p>
+
+          <div class="hero-ctas">
+            <a href="tel:+520000000000" class="btn-emergency" aria-label="Soy paciente o familiar — llamar ahora">
+              <!-- Red dot icon -->
+              <svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true" fill="none">
+                <circle cx="12" cy="12" r="10" fill="rgba(255,255,255,0.3)"/>
+                <circle cx="12" cy="12" r="5" fill="#fff"/>
+              </svg>
+              Soy paciente o familiar — Llamar ahora
+            </a>
+
+            <a href="https://wa.me/520000000000" class="btn-medical" target="_blank" rel="noopener" aria-label="Soy médico — solicitar interconsulta">
+              <!-- Blue circle icon -->
+              <svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true" fill="none">
+                <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/>
+                <circle cx="12" cy="12" r="4" fill="currentColor"/>
+              </svg>
+              Soy médico — Interconsulta
+            </a>
+          </div>
+
+          <div class="hero-badge-redtox" aria-label="Miembro de Redtox">
+            <span class="badge-dot" aria-hidden="true"></span>
+            Miembro · Redtox — Red de Toxicología de México
+          </div>
+        </div>
+
+        <!-- Right: Photo -->
+        <div class="hero-photo-side">
+          <div class="hero-photo-wrap">
+            <div class="hero-photo-circle">
+              <img src="ita2.JPG" alt="Dra. Itandehuitl Arango Castillo — Toxicóloga Clínica" loading="eager" />
+            </div>
+
+            <!-- Floating badge: CMN La Raza -->
+            <div class="hero-float-badge" aria-label="Hospital: CMN La Raza, IMSS">
+              <div class="badge-icon" aria-hidden="true">
+                <!-- Hospital icon -->
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--blue-bright)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/>
+                  <polyline points="9 22 9 12 15 12 15 22"/>
+                </svg>
+              </div>
+              <div>
+                <div class="badge-text">CMN La Raza · IMSS</div>
+                <div class="badge-sub">Ciudad de México</div>
+              </div>
+            </div>
+
+            <!-- Floating badge: Redtox -->
+            <div class="hero-float-redtox" aria-label="Miembro de Redtox">Redtox</div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ========================================================
+         QUIÉN SOY
+    ======================================================== -->
+    <section class="section" id="quien" aria-labelledby="quien-heading">
+      <div class="section-inner">
+        <div class="quien-grid">
+
+          <!-- Pull quote side -->
+          <div class="quien-quote-side">
+            <div class="quien-openquote" aria-hidden="true">&ldquo;</div>
+            <blockquote>
+              <p class="quien-pullquote">
+                Para mí, cada animal venenoso es un mundo mágico. Entender sus familias, sus especies, es lo que permite aplicar el antídoto correcto y evitar complicaciones que pueden costar una vida.
+              </p>
+              <footer class="quien-attribution">Dra. Itandehuitl Arango Castillo</footer>
+            </blockquote>
+          </div>
+
+          <!-- Text side -->
+          <div class="quien-text-side">
+            <div class="section-label">QUIÉN SOY</div>
+            <div class="divider" aria-hidden="true"></div>
+            <h2 class="quien-heading" id="quien-heading">
+              Una especialidad que pocos eligen, y menos dominan.
+            </h2>
+            <p class="quien-body">
+              Formada en Medicina de Urgencias y con especialidad en Toxicología Clínica en el Centro Médico Nacional La Raza del IMSS — uno de los centros toxicológicos más importantes de México — me dedico a los casos que otros no saben cómo resolver: el veneno de la fauna silvestre, las toxinas del mar, los hongos mortales, y las intoxicaciones de urgencia.
+            </p>
+            <p class="quien-body">
+              Soy miembro experto de Redtox, la Red de Toxicología de México, donde colaboro con especialistas de todo el país para mejorar el manejo de intoxicaciones graves.
+            </p>
+
+            <div class="credential-pills">
+              <span class="credential-pill">
+                <span class="dot-blue" aria-hidden="true"></span>
+                CMN La Raza · IMSS
+              </span>
+              <span class="credential-pill">
+                <span class="dot-teal" aria-hidden="true"></span>
+                Redtox · Miembro Experto
+              </span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         ESPECIALIDADES
+    ======================================================== -->
+    <section class="section" id="especialidades" aria-labelledby="esp-heading">
+      <div class="section-inner">
+
+        <div class="esp-header">
+          <div class="section-label">ESPECIALIDADES</div>
+          <div class="divider" aria-hidden="true"></div>
+          <h2 class="esp-heading" id="esp-heading">
+            Casos que requieren precisión científica, no suposiciones.
+          </h2>
+        </div>
+
+        <div class="esp-grid">
+
+          <!-- Card 01: FAUNA DE PONZOÑA -->
+          <article class="esp-card teal" aria-labelledby="esp-01-heading">
+            <div class="esp-num" aria-hidden="true">01</div>
+            <div class="esp-label">ANIMALES VENENOSOS</div>
+            <h3 class="esp-card-heading" id="esp-01-heading">Alacranes, serpientes y arañas.</h3>
+            <p class="esp-desc">
+              México concentra algunas de las especies más peligrosas del continente. El tiempo entre la picadura y el antídoto marca la diferencia entre complicaciones graves y una recuperación completa.
+            </p>
+            <ul class="esp-list" aria-label="Casos atendidos">
+              <li>Picadura de alacrán (Durango, Colima, Guerrero)</li>
+              <li>Mordedura de serpiente cascabel y nauyaca</li>
+              <li>Araña violinista y viuda negra</li>
+            </ul>
+            <a href="#contacto" class="esp-link" aria-label="Consultar sobre fauna de ponzoña">
+              Consultar
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <line x1="5" y1="12" x2="19" y2="12"/>
+                <polyline points="12 5 19 12 12 19"/>
+              </svg>
+            </a>
+          </article>
+
+          <!-- Card 02: TOXICOLOGÍA MARINA -->
+          <article class="esp-card blue" aria-labelledby="esp-02-heading">
+            <div class="esp-num" aria-hidden="true">02</div>
+            <div class="esp-label">COSTAS DE MÉXICO</div>
+            <h3 class="esp-card-heading" id="esp-02-heading">Lo que el mar puede hacerte.</h3>
+            <p class="esp-desc">
+              Las costas del Pacífico y el Golfo esconden organismos cuyo veneno puede causar reacciones sistémicas graves. Especialidad que ningún otro toxicólogo en México integra con la fauna terrestre.
+            </p>
+            <ul class="esp-list" aria-label="Casos atendidos">
+              <li>Lesiones por medusa</li>
+              <li>Herida por raya</li>
+              <li>Contacto con pepino de mar</li>
+            </ul>
+            <a href="#contacto" class="esp-link" aria-label="Consultar sobre toxicología marina">
+              Consultar
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <line x1="5" y1="12" x2="19" y2="12"/>
+                <polyline points="12 5 19 12 12 19"/>
+              </svg>
+            </a>
+          </article>
+
+          <!-- Card 03: MICOLOGÍA Y BOTÁNICA -->
+          <article class="esp-card teal-l" aria-labelledby="esp-03-heading">
+            <div class="esp-num" aria-hidden="true">03</div>
+            <div class="esp-label">HONGOS Y PLANTAS TÓXICAS</div>
+            <h3 class="esp-card-heading" id="esp-03-heading">Amanita phalloides. La seta que mata.</h3>
+            <p class="esp-desc">
+              La intoxicación por hongos venenosos tiene una ventana crítica de diagnóstico. Pasadas las primeras horas, el daño hepático puede ser irreversible. El diagnóstico temprano lo cambia todo.
+            </p>
+            <ul class="esp-list" aria-label="Casos atendidos">
+              <li>Hongos venenosos (Amanita phalloides)</li>
+              <li>Plantas tóxicas de uso doméstico</li>
+              <li>Intoxicación botánica aguda</li>
+            </ul>
+            <a href="#contacto" class="esp-link" aria-label="Consultar sobre micología y botánica tóxica">
+              Consultar
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <line x1="5" y1="12" x2="19" y2="12"/>
+                <polyline points="12 5 19 12 12 19"/>
+              </svg>
+            </a>
+          </article>
+
+          <!-- Card 04: URGENCIAS POR SUSTANCIAS -->
+          <article class="esp-card blue-m" aria-labelledby="esp-04-heading">
+            <div class="esp-num" aria-hidden="true">04</div>
+            <div class="esp-label">INTOXICACIÓN AGUDA</div>
+            <h3 class="esp-card-heading" id="esp-04-heading">Fármacos, químicos y emergencias críticas.</h3>
+            <p class="esp-desc">
+              Desde una sobredosis hasta exposición industrial a químicos o monóxido de carbono. Interconsulta hospitalaria disponible para equipos de urgencias en tiempo real.
+            </p>
+            <ul class="esp-list" aria-label="Casos atendidos">
+              <li>Intoxicación por medicamentos</li>
+              <li>Plaguicidas e insecticidas</li>
+              <li>Monóxido de carbono</li>
+              <li>Intento suicida por intoxicación</li>
+            </ul>
+            <a href="#contacto" class="esp-link" aria-label="Consultar sobre urgencias por sustancias">
+              Consultar
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <line x1="5" y1="12" x2="19" y2="12"/>
+                <polyline points="12 5 19 12 12 19"/>
+              </svg>
+            </a>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         CÓMO FUNCIONA
+    ======================================================== -->
+    <section class="section" id="proceso" aria-labelledby="proceso-heading">
+      <div class="section-inner">
+        <div class="proceso-header">
+          <div class="section-label">CÓMO FUNCIONA</div>
+          <div class="divider" style="margin: 14px auto 0;" aria-hidden="true"></div>
+          <h2 class="proceso-heading" id="proceso-heading" style="margin-top: 16px;">
+            Tres pasos entre el veneno y el antídoto.
+          </h2>
+        </div>
+
+        <div class="proceso-steps">
+
+          <!-- Step 1 -->
+          <div class="proceso-step">
+            <div class="paso-num-wrap">
+              <div class="paso-icon-circle" aria-hidden="true">
+                <!-- Phone/message icon -->
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--blue-bright)" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.8a19.79 19.79 0 01-3.07-8.68A2 2 0 012 .96h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 8.91a16 16 0 006.18 6.18l1.31-1.31a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/>
+                </svg>
+              </div>
+              <span class="paso-num" aria-hidden="true">01</span>
+            </div>
+            <h3 class="paso-title">Llamas o escribes</h3>
+            <p class="paso-desc">Me contactas por teléfono o WhatsApp. Cuéntame qué sucedió, cuándo y los síntomas actuales.</p>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="proceso-step">
+            <div class="paso-num-wrap">
+              <div class="paso-icon-circle" aria-hidden="true">
+                <!-- Clipboard/analysis icon -->
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/>
+                  <polyline points="14 2 14 8 20 8"/>
+                  <line x1="16" y1="13" x2="8" y2="13"/>
+                  <line x1="16" y1="17" x2="8" y2="17"/>
+                  <polyline points="10 9 9 9 8 9"/>
+                </svg>
+              </div>
+              <span class="paso-num" aria-hidden="true">02</span>
+            </div>
+            <h3 class="paso-title">Evalúo tu caso</h3>
+            <p class="paso-desc">Realizo un triage rápido para determinar el nivel de urgencia, el agente tóxico y el protocolo de manejo adecuado.</p>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="proceso-step">
+            <div class="paso-num-wrap">
+              <div class="paso-icon-circle" aria-hidden="true">
+                <!-- Shield/check icon -->
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--blue-bright)" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                  <polyline points="9 12 11 14 15 10"/>
+                </svg>
+              </div>
+              <span class="paso-num" aria-hidden="true">03</span>
+            </div>
+            <h3 class="paso-title">Atención inmediata o programada</h3>
+            <p class="paso-desc">Dependiendo de la urgencia, guío el manejo en tiempo real o coordino la consulta presencial o interconsulta hospitalaria.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         GUÍA DE EMERGENCIA
+    ======================================================== -->
+    <section class="section" id="guia" aria-labelledby="guia-heading">
+      <div class="section-inner">
+
+        <!-- Urgency band -->
+        <div class="guia-urgency-band" role="alert" aria-label="Alerta de emergencia">
+          <div class="guia-urgency-text">
+            <div class="urgency-dot" aria-hidden="true"></div>
+            <span class="guia-urgency-label">¿Es una emergencia en este momento?</span>
+          </div>
+          <a href="tel:+520000000000" class="btn-call-guia" aria-label="Llamar a la Dra. Itandehuitl ahora">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/>
+            </svg>
+            Llamar a la Dra. ahora
+          </a>
+        </div>
+
+        <h2 class="guia-heading" id="guia-heading">Guía de primeros pasos.</h2>
+        <p class="guia-sub">Qué hacer — y qué no hacer — mientras esperas atención médica.</p>
+
+        <!-- Accordion -->
+        <div class="accordion" role="list">
+
+          <!-- Item 1: Alacrán -->
+          <div class="accordion-item" role="listitem">
+            <button class="accordion-trigger" aria-expanded="false" aria-controls="acc-body-1" id="acc-trigger-1">
+              <div class="accordion-trigger-left">
+                <span class="accordion-emoji" aria-hidden="true">🦂</span>
+                <span class="accordion-title">Si te picó un alacrán</span>
+              </div>
+              <svg class="accordion-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polyline points="6 9 12 15 18 9"/>
+              </svg>
+            </button>
+            <div class="accordion-body" id="acc-body-1" role="region" aria-labelledby="acc-trigger-1">
+              <div class="accordion-content">
+                <div class="accordion-cols">
+                  <div class="accordion-do">
+                    <div class="accordion-col-label">Qué hacer</div>
+                    <ul class="accordion-list">
+                      <li>Mantén calma y reposo absoluto</li>
+                      <li>Inmoviliza la extremidad afectada</li>
+                      <li>Anota la hora exacta de la picadura</li>
+                      <li>Busca atención médica inmediata</li>
+                      <li>Lleva al animal si es seguro identificarlo</li>
+                    </ul>
+                  </div>
+                  <div class="accordion-dont">
+                    <div class="accordion-col-label">Qué NO hacer</div>
+                    <ul class="accordion-list">
+                      <li>No apliques torniquete ni succión</li>
+                      <li>No hagas incisiones en la zona</li>
+                      <li>No administres medicamentos sin indicación médica</li>
+                      <li>No apliques hielo ni calor</li>
+                      <li>No ingieras alcohol</li>
+                    </ul>
+                  </div>
+                </div>
+                <a href="tel:+520000000000" class="btn-accordion-call" aria-label="Llamar por picadura de alacrán">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/>
+                  </svg>
+                  Llamar a la Dra. ahora
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 2: Serpiente -->
+          <div class="accordion-item" role="listitem">
+            <button class="accordion-trigger" aria-expanded="false" aria-controls="acc-body-2" id="acc-trigger-2">
+              <div class="accordion-trigger-left">
+                <span class="accordion-emoji" aria-hidden="true">🐍</span>
+                <span class="accordion-title">Si fue una mordedura de serpiente</span>
+              </div>
+              <svg class="accordion-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polyline points="6 9 12 15 18 9"/>
+              </svg>
+            </button>
+            <div class="accordion-body" id="acc-body-2" role="region" aria-labelledby="acc-trigger-2">
+              <div class="accordion-content">
+                <div class="accordion-cols">
+                  <div class="accordion-do">
+                    <div class="accordion-col-label">Qué hacer</div>
+                    <ul class="accordion-list">
+                      <li>Mantén la extremidad por debajo del nivel del corazón</li>
+                      <li>Inmoviliza el área mordida con férula suave</li>
+                      <li>Retira anillos, relojes y ropa ajustada</li>
+                      <li>Anota la hora, el lugar y describe la serpiente</li>
+                      <li>Traslada de inmediato a urgencias</li>
+                    </ul>
+                  </div>
+                  <div class="accordion-dont">
+                    <div class="accordion-col-label">Qué NO hacer</div>
+                    <ul class="accordion-list">
+                      <li>No intentes succionar el veneno</li>
+                      <li>No apliques torniquete</li>
+                      <li>No cortes la herida</li>
+                      <li>No uses electroshock ni remedios caseros</li>
+                      <li>No mates a la serpiente intentando capturarla</li>
+                    </ul>
+                  </div>
+                </div>
+                <a href="tel:+520000000000" class="btn-accordion-call" aria-label="Llamar por mordedura de serpiente">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/>
+                  </svg>
+                  Llamar a la Dra. ahora
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 3: Medusa o raya -->
+          <div class="accordion-item" role="listitem">
+            <button class="accordion-trigger" aria-expanded="false" aria-controls="acc-body-3" id="acc-trigger-3">
+              <div class="accordion-trigger-left">
+                <span class="accordion-emoji" aria-hidden="true">🪼</span>
+                <span class="accordion-title">Si una medusa o raya te lastimó</span>
+              </div>
+              <svg class="accordion-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polyline points="6 9 12 15 18 9"/>
+              </svg>
+            </button>
+            <div class="accordion-body" id="acc-body-3" role="region" aria-labelledby="acc-trigger-3">
+              <div class="accordion-content">
+                <div class="accordion-cols">
+                  <div class="accordion-do">
+                    <div class="accordion-col-label">Qué hacer</div>
+                    <ul class="accordion-list">
+                      <li>Sal del agua de inmediato</li>
+                      <li>Enjuaga con agua salada (no dulce)</li>
+                      <li>Retira tentáculos visibles con pinzas o tarjeta, sin frotar</li>
+                      <li>Para raya: limpia la herida con agua corriente</li>
+                      <li>Busca atención médica si hay síntomas sistémicos</li>
+                    </ul>
+                  </div>
+                  <div class="accordion-dont">
+                    <div class="accordion-col-label">Qué NO hacer</div>
+                    <ul class="accordion-list">
+                      <li>No enjuagues con agua dulce (activa nematocistos)</li>
+                      <li>No frotes la zona afectada</li>
+                      <li>No apliques orina (mito sin evidencia)</li>
+                      <li>No toques los tentáculos con manos desnudas</li>
+                      <li>No subestimes síntomas respiratorios o cardiovasculares</li>
+                    </ul>
+                  </div>
+                </div>
+                <a href="tel:+520000000000" class="btn-accordion-call" aria-label="Llamar por lesión marina">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/>
+                  </svg>
+                  Llamar a la Dra. ahora
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 4: Ingestión de sustancias -->
+          <div class="accordion-item" role="listitem">
+            <button class="accordion-trigger" aria-expanded="false" aria-controls="acc-body-4" id="acc-trigger-4">
+              <div class="accordion-trigger-left">
+                <span class="accordion-emoji" aria-hidden="true">💊</span>
+                <span class="accordion-title">Si fue ingestión de sustancias</span>
+              </div>
+              <svg class="accordion-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <polyline points="6 9 12 15 18 9"/>
+              </svg>
+            </button>
+            <div class="accordion-body" id="acc-body-4" role="region" aria-labelledby="acc-trigger-4">
+              <div class="accordion-content">
+                <div class="accordion-cols">
+                  <div class="accordion-do">
+                    <div class="accordion-col-label">Qué hacer</div>
+                    <ul class="accordion-list">
+                      <li>Conserva el envase o identifica la sustancia ingerida</li>
+                      <li>Anota la cantidad aproximada y la hora</li>
+                      <li>Mantén a la persona despierta y en posición lateral si está somnolenta</li>
+                      <li>Llama de inmediato a un toxicólogo o urgencias</li>
+                      <li>Si hay pérdida de consciencia, llama al 911</li>
+                    </ul>
+                  </div>
+                  <div class="accordion-dont">
+                    <div class="accordion-col-label">Qué NO hacer</div>
+                    <ul class="accordion-list">
+                      <li>No induzcas el vómito sin indicación médica</li>
+                      <li>No des leche, agua o alimentos sin consultar</li>
+                      <li>No esperes a que aparezcan síntomas graves</li>
+                      <li>No dejes sola a la persona</li>
+                      <li>No deseches el envase o restos de la sustancia</li>
+                    </ul>
+                  </div>
+                </div>
+                <a href="tel:+520000000000" class="btn-accordion-call" aria-label="Llamar por ingestión de sustancias">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/>
+                  </svg>
+                  Llamar a la Dra. ahora
+                </a>
+              </div>
+            </div>
+          </div>
+
+        </div><!-- end accordion -->
+
+      </div>
+    </section>
+
+    <!-- ========================================================
+         CONTACTO
+    ======================================================== -->
+    <section class="section" id="contacto" aria-labelledby="contacto-heading">
+      <div class="contacto-glow" aria-hidden="true"></div>
+      <div class="section-inner contacto-inner">
+
+        <div class="section-label" style="margin-bottom: 16px;">CONTACTO</div>
+        <h2 class="contacto-heading" id="contacto-heading">
+          Escríbeme o llama.
+        </h2>
+        <p class="contacto-sub">
+          Para urgencias, llama directamente. Para consultas o interconsultas médicas, WhatsApp.
+        </p>
+
+        <div class="contacto-btns">
+          <a href="tel:+520000000000" class="btn-call-big" aria-label="Llamar al +52 00 0000 0000">
+            <!-- Phone icon -->
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/>
+            </svg>
+            Llamar: +52 00 0000 0000
+          </a>
+
+          <a href="https://wa.me/520000000000" class="btn-whatsapp-big" target="_blank" rel="noopener" aria-label="Abrir WhatsApp">
+            <!-- WhatsApp icon -->
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+            </svg>
+            WhatsApp
+          </a>
+        </div>
+
+        <p class="contacto-24h">
+          <strong>Disponible 24 horas</strong> para urgencias toxicológicas
+        </p>
+        <p class="contacto-note">Centro Médico Nacional La Raza · CDMX · Miembro Redtox</p>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============================================================
+       FOOTER
+  ============================================================ -->
+  <footer role="contentinfo">
+    <div class="footer-inner">
+      <span class="footer-name">Dra. Itandehuitl Arango Castillo</span>
+      <span class="footer-detail">Toxicología Clínica · Medicina de Urgencias · CMN La Raza</span>
+      <span class="footer-year">&copy; 2026</span>
+    </div>
+  </footer>
+
+  <!-- ============================================================
+       JAVASCRIPT (inline)
+  ============================================================ -->
+  <script>
+    (function () {
+      'use strict';
+
+      /* --------------------------------------------------------
+         NAV: transparent → solid on scroll
+      -------------------------------------------------------- */
+      var nav = document.getElementById('main-nav');
+      var SCROLL_THRESHOLD = 60;
+
+      function updateNav() {
+        if (window.scrollY > SCROLL_THRESHOLD) {
+          nav.classList.add('scrolled');
+        } else {
+          nav.classList.remove('scrolled');
+        }
+      }
+
+      window.addEventListener('scroll', updateNav, { passive: true });
+      updateNav();
+
+      /* --------------------------------------------------------
+         MOBILE MENU
+      -------------------------------------------------------- */
+      var hamburgerBtn   = document.getElementById('hamburger-btn');
+      var mobileMenu     = document.getElementById('mobile-menu');
+      var mobileCloseBtn = document.getElementById('mobile-menu-close');
+      var mobileLinks    = mobileMenu.querySelectorAll('.mobile-nav-link');
+
+      function openMenu() {
+        mobileMenu.classList.add('open');
+        hamburgerBtn.setAttribute('aria-expanded', 'true');
+        document.body.style.overflow = 'hidden';
+        mobileCloseBtn.focus();
+      }
+
+      function closeMenu() {
+        mobileMenu.classList.remove('open');
+        hamburgerBtn.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+        hamburgerBtn.focus();
+      }
+
+      hamburgerBtn.addEventListener('click', openMenu);
+      mobileCloseBtn.addEventListener('click', closeMenu);
+
+      mobileLinks.forEach(function (link) {
+        link.addEventListener('click', closeMenu);
+      });
+
+      // Close on Escape key
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && mobileMenu.classList.contains('open')) {
+          closeMenu();
+        }
+      });
+
+      /* --------------------------------------------------------
+         ACCORDION
+      -------------------------------------------------------- */
+      var accordionItems = document.querySelectorAll('.accordion-item');
+
+      accordionItems.forEach(function (item) {
+        var trigger = item.querySelector('.accordion-trigger');
+
+        trigger.addEventListener('click', function () {
+          var isOpen = item.classList.contains('open');
+
+          // Close all
+          accordionItems.forEach(function (i) {
+            i.classList.remove('open');
+            i.querySelector('.accordion-trigger').setAttribute('aria-expanded', 'false');
+          });
+
+          // Open clicked (toggle)
+          if (!isOpen) {
+            item.classList.add('open');
+            trigger.setAttribute('aria-expanded', 'true');
+          }
+        });
+      });
+
+      /* --------------------------------------------------------
+         SMOOTH SCROLL for anchor links
+         (CSS scroll-behavior handles most of it, but JS ensures
+         offset accounting for sticky strip + nav)
+      -------------------------------------------------------- */
+      var OFFSET = 48 + 68 + 16; // strip + nav + buffer
+
+      document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
+        anchor.addEventListener('click', function (e) {
+          var targetId = this.getAttribute('href').slice(1);
+          if (!targetId) return;
+          var target = document.getElementById(targetId);
+          if (!target) return;
+          e.preventDefault();
+          var top = target.getBoundingClientRect().top + window.scrollY - OFFSET;
+          window.scrollTo({ top: top, behavior: 'smooth' });
+        });
+      });
+
+    })();
+  </script>
+
+</body>
+</html>
