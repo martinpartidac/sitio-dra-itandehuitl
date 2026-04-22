@@ -229,23 +229,25 @@
 
     @media print {
       html {
-        /* Escala la tarjeta de 648px pantalla → 90mm papel (factor 0.525) */
-        zoom: 0.525;
+        /* zoom para cubrir altura de página: 370px → 56mm */
+        zoom: 0.57;
       }
       body {
+        display: block;
         background: white;
         padding: 0;
-        gap: 0;
-        justify-content: flex-start;
+        margin: 0;
+        overflow: hidden;
         -webkit-print-color-adjust: exact;
         print-color-adjust: exact;
       }
       .card-side-label { display: none; }
-      .card-wrap { gap: 0; }
+      .card-wrap { display: block; }
       .card {
         box-shadow: none;
         border-radius: 0;
         page-break-after: always;
+        display: block;
       }
     }
   </style>
