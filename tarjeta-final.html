@@ -226,15 +226,29 @@
       margin-top: 4px;
     }
 
-    @page { size: 9cm 5.4cm; margin: 0; }
+    @page { size: 96mm 56mm; margin: 0; } /* 90mm + 3mm sangrado cada lado */
 
     @media print {
-      body { background: white; padding: 0; gap: 0; justify-content: flex-start; }
+      body {
+        background: white;
+        padding: 0;
+        gap: 0;
+        justify-content: flex-start;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
       .card-side-label { display: none; }
       .card-wrap { gap: 0; }
-      .card { width: 9cm; height: 5.4cm; box-shadow: none; border-radius: 0; page-break-after: always; }
+      /* Sangrado: tarjeta 90×50mm + 3mm en cada lado = 96×56mm */
+      .card {
+        width: 96mm;
+        height: 56mm;
+        box-shadow: none;
+        border-radius: 0;
+        page-break-after: always;
+      }
       .c1f-logo { width: 90px; }
-      .c1f-inner { padding: 28px 34px; gap: 26px; }
+      .c1f-inner { padding: 28px 37px; gap: 26px; }
       .c1f-divider { height: 90px; }
       .c1f-name { font-size: 0.875rem; }
       .c1b-symbol { width: 90px; }
