@@ -144,6 +144,12 @@
       color: rgba(255, 255, 255, 0.9);
     }
 
+    /* Logo: blanco sobre hero, navy+dorado al hacer scroll */
+    .nav-logo-img-dark  { display: block; }
+    .nav-logo-img-light { display: none; }
+    nav:not(.scrolled) .nav-logo-img-dark  { display: none; }
+    nav:not(.scrolled) .nav-logo-img-light { display: block; }
+
     nav:not(.scrolled) .nav-phone svg {
       color: var(--blue-bright);
     }
@@ -2104,7 +2110,8 @@
   <nav id="navbar">
     <div class="nav-inner">
       <a href="#hero" class="nav-logo">
-        <img class="nav-logo-img" src="LOGO_SOLO_01.png" alt="Logo Itandehuitl" />
+        <img class="nav-logo-img nav-logo-img-light" src="LOGO_SOLO_03.png" alt="Logo Itandehuitl" />
+        <img class="nav-logo-img nav-logo-img-dark"  src="LOGO_SOLO_01.png" alt="Logo Itandehuitl" />
         <span class="nav-logo-divider"></span>
         <span class="nav-logo-text">Dra. Itandehuitl</span>
       </a>
