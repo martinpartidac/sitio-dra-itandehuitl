@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tarjeta — Dra. Itandehuitl</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: #d6d6d6;
+      font-family: 'Inter', sans-serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 40px;
+      padding: 60px 40px;
+    }
+
+    .card-wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .card-side-label {
+      font-size: 0.625rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: #bbb;
+    }
+
+    .card {
+      width: 648px;
+      height: 370px;
+      border-radius: 14px;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 16px 56px rgba(0,0,0,0.28), 0 2px 8px rgba(0,0,0,0.12);
+      flex-shrink: 0;
+    }
+
+    /* --- Frente blanco --- */
+    .c1f { background: #ffffff; }
+    .c1f::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 5px;
+      background: linear-gradient(90deg, #b8860b, #e8b800, #f5d060, #e8b800, #b8860b);
+    }
+    .c1f::after {
+      content: '';
+      position: absolute;
+      bottom: -60px; right: -60px;
+      width: 220px; height: 220px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(232,184,0,0.07) 0%, transparent 65%);
+      pointer-events: none;
+    }
+
+    .c1f-inner {
+      padding: 44px 52px;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      gap: 40px;
+    }
+
+    .c1f-logo { width: 136px; flex-shrink: 0; }
+
+    .c1f-divider {
+      width: 1px;
+      height: 140px;
+      background: linear-gradient(to bottom, transparent, rgba(200,160,0,0.55) 20%, rgba(200,160,0,0.55) 80%, transparent);
+      flex-shrink: 0;
+    }
+
+    .c1f-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3125rem;
+      font-weight: 700;
+      color: #1e2a5e;
+      line-height: 1.2;
+      margin-bottom: 3px;
+    }
+    .c1f-name em { font-style: italic; font-weight: 400; }
+
+    .c1f-specialty {
+      font-size: 0.5875rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: #b8930a;
+      margin-bottom: 22px;
+      margin-top: 10px;
+      line-height: 1.9;
+    }
+
+    .c1f-details { display: flex; flex-direction: column; gap: 6px; margin-bottom: 20px; }
+
+    .c1f-detail {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.6875rem;
+      color: #5a5a6e;
+      letter-spacing: 0.02em;
+    }
+    .c1f-detail::before {
+      content: '';
+      width: 4px; height: 4px;
+      border-radius: 50%;
+      background: #e8b800;
+      flex-shrink: 0;
+    }
+
+    .c1f-contact {
+      padding-top: 16px;
+      border-top: 1px solid rgba(30,42,94,0.1);
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    .c1f-contact-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.75rem;
+      color: #1e2a5e;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+    }
+    .c1f-contact-icon {
+      width: 13px; height: 13px;
+      flex-shrink: 0;
+      color: #b8930a;
+    }
+
+    /* --- Reverso navy --- */
+    .c1b { background: #1e2a5e; }
+    .c1b::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 5px;
+      background: linear-gradient(90deg, #b8860b, #e8b800, #f5d060, #e8b800, #b8860b);
+    }
+    .c1b::after {
+      content: '';
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      width: 300px; height: 300px;
+      border-radius: 50%;
+      border: 1px solid rgba(232,184,0,0.07);
+      pointer-events: none;
+    }
+    .c1b-ring2 {
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      width: 380px; height: 380px;
+      border-radius: 50%;
+      border: 1px solid rgba(232,184,0,0.04);
+    }
+
+    .c1b-inner {
+      position: relative;
+      z-index: 1;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+    }
+
+    .c1b-symbol {
+      width: 140px;
+      filter: brightness(0) invert(1);
+      opacity: 0.88;
+      margin-bottom: 8px;
+    }
+
+    .c1b-specialty {
+      font-size: 0.5625rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #e8b800;
+    }
+
+    .c1b-contact { margin-top: 8px; display: flex; flex-direction: column; align-items: center; gap: 5px; }
+
+    .c1b-phone {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.8125rem;
+      color: rgba(255,255,255,0.7);
+      letter-spacing: 0.04em;
+    }
+    .c1b-phone::before, .c1b-phone::after {
+      content: '';
+      display: block;
+      width: 18px; height: 1px;
+      background: rgba(232,184,0,0.45);
+    }
+
+    .c1b-hospital {
+      font-size: 0.5rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.25);
+      margin-top: 4px;
+    }
+
+    @page { size: 9cm 5.4cm; margin: 0; }
+
+    @media print {
+      body { background: white; padding: 0; gap: 0; justify-content: flex-start; }
+      .card-side-label { display: none; }
+      .card-wrap { gap: 0; }
+      .card { width: 9cm; height: 5.4cm; box-shadow: none; border-radius: 0; page-break-after: always; }
+      .c1f-logo { width: 90px; }
+      .c1f-inner { padding: 28px 34px; gap: 26px; }
+      .c1f-divider { height: 90px; }
+      .c1f-name { font-size: 0.875rem; }
+      .c1b-symbol { width: 90px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Frente -->
+  <div class="card-wrap">
+    <span class="card-side-label">Frente</span>
+    <div class="card c1f">
+      <div class="c1f-inner">
+        <img class="c1f-logo" src="LOGO_SOLO_01.png" alt="Logo" />
+        <div class="c1f-divider"></div>
+        <div>
+          <div class="c1f-name">
+            Dra. Itandehuitl<br>
+            <em>Arango Castillo</em>
+          </div>
+          <div class="c1f-specialty">Toxicología Clínica<br>Medicina de Urgencias</div>
+          <div class="c1f-details">
+            <div class="c1f-detail">Hospital Ángeles Lindavista · CDMX</div>
+            <div class="c1f-detail">Redtox</div>
+          </div>
+          <div class="c1f-contact">
+            <div class="c1f-contact-row">
+              <svg class="c1f-contact-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.4 2 2 0 0 1 3.6 1.22h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.79a16 16 0 0 0 6.29 6.29l1.86-1.86a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
+              </svg>
+              +52 81 1610 5778
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Reverso -->
+  <div class="card-wrap">
+    <span class="card-side-label">Reverso</span>
+    <div class="card c1b">
+      <div class="c1b-ring2"></div>
+      <div class="c1b-inner">
+        <img class="c1b-symbol" src="LOGO_SOLO_01.png" alt="" aria-hidden="true" />
+        <div class="c1b-specialty">Toxicología Clínica</div>
+        <div class="c1b-contact">
+          <div class="c1b-phone">+52 81 1610 5778</div>
+        </div>
+        <div class="c1b-hospital">Ángeles Lindavista</div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
