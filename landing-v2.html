@@ -234,15 +234,34 @@
     }
 
     .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
+    .nav-logo-img {
+      height: 38px;
+      width: 38px;
+      object-fit: contain;
+      flex-shrink: 0;
+    }
+    .nav-logo-divider {
+      width: 1px;
+      height: 26px;
+      background: linear-gradient(to bottom, transparent, rgba(232,184,0,0.5) 20%, rgba(232,184,0,0.5) 80%, transparent);
+      flex-shrink: 0;
+    }
+    .nav-logo-text {
       font-family: 'Playfair Display', serif;
-      font-size: 1.25rem;
+      font-size: 1.1rem;
       font-weight: 700;
       color: var(--text);
-      letter-spacing: 0.01em;
       line-height: 1;
     }
-    .nav-logo span {
+    .nav-logo-text em {
       color: var(--teal);
+      font-style: italic;
+      font-weight: 400;
     }
 
     .nav-links {
@@ -1569,7 +1588,9 @@
     <nav class="nav" id="main-nav" role="navigation" aria-label="Navegación principal">
       <div class="nav-inner">
         <a href="#" class="nav-logo" aria-label="Dra. Itandehuitl — inicio">
-          Dra. <span>Itandehuitl</span>
+          <img class="nav-logo-img" src="LOGO_SOLO_03.png" alt="Logo Itandehuitl" />
+          <span class="nav-logo-divider"></span>
+          <span class="nav-logo-text">Dra. <em>Itandehuitl</em></span>
         </a>
 
         <ul class="nav-links" role="list">
